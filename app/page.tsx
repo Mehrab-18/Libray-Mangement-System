@@ -53,7 +53,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const libraryCards = [
     {
       id: 1,
-      libraryNumber: "2023 1234 5566",
+      libraryNumber: "2023 1234 5246",
       works: 5,
       dateofAddition: "15.08.2023",
       isBtn1: true,
