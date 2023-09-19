@@ -30,7 +30,7 @@ const WorkCard = ({
           <div className="flex justify-between items-center">
             {isOriginal && (
               <button
-                className={`bg-${cardStyles[0]?.originalBtnBgColor} h-8 w-24 text-${cardStyles[0].originalBtnColor} text-[14px] rounded-full px-4 py-1`}
+                className={`bg-offwhite h-8 w-24 text-custom-brown  text-[14px] rounded-full px-4 py-1`}
               >
                 {originalText}
               </button>
