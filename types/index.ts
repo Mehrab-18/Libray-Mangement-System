@@ -110,7 +110,7 @@ export interface CardStyle {
 }
 
 export interface WorkCardProps{
-  imageUrl: string;
+  imageUrl: any;
   isOriginal: boolean;
   originalText?:string;
   description: string;

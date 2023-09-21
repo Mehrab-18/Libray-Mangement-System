@@ -11,6 +11,7 @@ import { FiMenu, FiX } from "react-icons/fi"; // Example icons (you can use any 
 import { NavLinkProps } from "@/types";
 import { CustomButton } from ".";
 import CustomLink from "./CustomLink";
+import ContactModal from "./ContactModal";
 const callIcon = require("@/public/icons/Contact Us_Button_Header.svg");
 const worldIcon = require("@/public/icons/World_Icon.svg");
 
