@@ -10,3 +10,8 @@ export const getHomepageLibraries = async () => {
     return console.log(error);
   }
 };
+
+export const getAllLibraries = (page, pageSize) =>
+  getRequest(
+    `https://strapi-philips.onrender.com/api/users?populate=deep,4&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true`
+  );

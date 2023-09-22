@@ -13,7 +13,7 @@ const LibraryCard = ({
   isBtn2,
   btn2Text,
   isRecommended,
-}: LibraryCardProps) => {
+}: any) => {
   return (
     <div className="min-w-[300px] min-h-[300px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
       <div>

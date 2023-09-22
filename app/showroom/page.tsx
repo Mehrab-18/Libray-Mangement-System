@@ -1,7 +1,9 @@
+"use client";
 import CardContainer from "@/components/CardContainer";
 import Layout from "@/components/Layout";
 import LibraryCard from "@/components/LibraryCard";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAllShowrooms } from "@/api/showroom";
 const book8 =
   require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
 const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;
@@ -9,6 +11,11 @@ const book10 = require("@/public/images/IMG_4251_copy_bb12520a0a.png").default;
 const book11 = require("@/public/images/IMG_6477_copy_34d0993ee2.png").default;
 
 const page = () => {
+  const [showRoomsData, setShowroomsData] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [totalRecords, setTotalRecords] = useState(null);
+
   const workCard = [
     {
       imageUrl: book8,
@@ -89,6 +96,15 @@ const page = () => {
       dateofAddition: "18.10.2023",
     },
   ];
+
+  useEffect(() => {
+    getShowrooms();
+  }, []);
+
+  const getShowrooms = async () => {
+    const res = await getAllShowrooms();
+    console.log("showrooms", res);
+  };
 
   return (
     <Layout>
