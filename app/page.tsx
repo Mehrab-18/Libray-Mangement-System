@@ -16,6 +16,8 @@ import FAQ from "@/components/FAQ";
 import Quotation from "@/components/Quotation";
 import MobileFooter from "@/components/MobileFooter";
 import Layout from "@/components/Layout";
+import StartWithUs from "@/components/StartWithUs";
+import Showroom from "@/components/Showroom";
 const book1 =
   require("@/public/images/Foto_07_11_22_11_39_21_copy_6385f42326.png").default;
 const book2 =
@@ -183,7 +185,7 @@ export default async function Home({ searchParams }: HomeProps) {
         />
       </div>
       <div className="py-12">
-        <Overview
+        <StartWithUs
           heading="That's how you start with us"
           paragraph="By registering with the book register of Kollektum GmbH, you bring your book collection into the digital age. You will then receive your membership card with your library number and a personal password. This way you can log in to the member area and make your library accessible to others."
           imageUrl={imgProp2}
@@ -194,7 +196,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <HomeLibrarySection />
       </div>
       <div className="py-12">
-        <Overview
+        <Showroom
           heading="Showroom"
           paragraph="By registering with the book register of Kollektum GmbH, you bring your book collection into the digital age. You will then receive your membership card with your library number and a personal password. This way you can log in to the member area and make your library accessible to others."
           imageUrl={imgProp3}
@@ -202,7 +204,7 @@ export default async function Home({ searchParams }: HomeProps) {
         />
       </div>
       <div className="py-12">
-        <h1 className="text-[#0D1118] text-[25px] font-semibold pl-12 lg:pl-24">
+        <h1 className="text-[#0D1118] text-[19px] font-semibold pl-12 lg:pl-24">
           Showroom Gallery
         </h1>
         <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto ">
@@ -217,11 +219,11 @@ export default async function Home({ searchParams }: HomeProps) {
           </Link>
         </div>
       </div>
-      <div className="p-0 lg:p-12 block lg:flex w-full lg:w-5/6">
-        <h1 className="text-custom-brown text-center lg:text-start font-semibold w-full lg:w-5/12 text-[24px] lg:text-[35px]">
+      <div className="p-0  lg:p-12 block lg:ml-14 lg:flex w-full lg:w-5/6">
+        <h1 className="text-custom-brown pl-3 lg:pl-0 text-start font-semibold w-full lg:w-5/12 text-[24px] lg:text-[20px]">
           Discover inspiring works.
         </h1>
-        <p className="text-custom-gray text-[16px] p-3 lg:p-0 w-full lg:w-5/12">
+        <p className="text-custom-gray text-[12px] p-3 lg:p-0 w-full lg:w-5/12">
           Browse through our new arrivals that have been registered recently or
           look through all facsimiles and other works. With just a few clicks
           you can filter by genres and other categories or search specifically
