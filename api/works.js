@@ -14,3 +14,8 @@ export const getSpecialWorks = () =>
   getRequest(
     "https://strapi-philips.onrender.com/api/besondere-werke?populate=deep,3"
   );
+
+export const getSingleWork = (id) =>
+  getRequest(
+    `https://strapi-philips.onrender.com/api/stammwerkes/${id}?populate=deep,3`
+  );

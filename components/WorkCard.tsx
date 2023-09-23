@@ -4,17 +4,17 @@ import { WorkCardProps } from "@/types";
 
 const WorkCard = ({
   imageUrl,
-  isOriginal,
-  originalText,
-  description,
+  isType,
+  typeText,
+  titleText,
   footerText,
   isfooterText,
   isfooterText2,
   footerText2,
   hasVolumes,
   noOfVolumes,
-  cardStyles,
-}: WorkCardProps) => {
+  footerMargin,
+}: any) => {
   return (
     <div className="min-w-[250px] h-96 border shadow-lg rounded-lg m-2 overflow-hidden">
       <div className="w-full h-[50%] bg-[#F4F4F4] relative">
@@ -22,17 +22,17 @@ const WorkCard = ({
           src={imageUrl}
           alt="Card Image"
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
         />
       </div>
       <div className="h-auto px-4 py-8 bg-white">
         <div className="flex flex-col h-full justify-between">
           <div className="flex justify-between items-center">
-            {isOriginal && (
+            {isType && (
               <button
-                className={`bg-offwhite h-8 w-24 text-custom-brown  text-[14px] rounded-full px-4 py-1`}
+                className={`bg-custom-offwhite h-8 w-18 text-custom-brown  text-[14px] rounded-full px-4 py-1`}
               >
-                {originalText}
+                {typeText}
               </button>
             )}
             {hasVolumes && (
@@ -41,8 +41,12 @@ const WorkCard = ({
               </span>
             )}
           </div>
-          <div className={`text-[16px] text-${cardStyles} font-semibold my-3`}>
-            {description}
+          <div
+            className={`text-[16px] mt-4 ${
+              footerMargin ? `mb-16` : `mb-8`
+            } text-custom-brown font-semibold my-3`}
+          >
+            {titleText}
           </div>
           <div className="border-t border-gray-300">
             <div className="w-full flex justify-between">

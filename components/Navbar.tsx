@@ -69,7 +69,10 @@ function MobileNavBar() {
             <ul className="flex justify-center space-x-6">
               {publicLinks.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.url} className={link.customStyles}>
+                  <Link
+                    href={link.url}
+                    className={`hover:underline ${link.customStyles}`}
+                  >
                     {link.title}
                   </Link>
                 </li>

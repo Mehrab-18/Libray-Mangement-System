@@ -15,10 +15,6 @@ const page = () => {
   const [pageSize, setPageSize] = useState(10);
   const [totalRecords, setTotalRecords] = useState(0);
 
-  const workCardStyles = [
-    { originalBtnBgColor: "custom-offwhite", originalBtnColor: "black" },
-  ];
-
   useEffect(() => {
     getWorks();
   }, [currentPage]);
@@ -51,17 +47,17 @@ const page = () => {
         ) : (
           <div className=" w-full lg:w-[70%] flex flex-wrap justify-center lg:justify-start gap-10">
             {worksCardData?.map((work: any, index: number) => (
-              <Link href={{ pathname: `works/${work.id}`, query: work }}>
+              <Link href={`works/${work.id}`}>
                 <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" key={index}>
                   <WorkCard
                     imageUrl={work.attributes.Titelbild.data.attributes.url}
-                    isOriginal={true}
-                    originalText={work.attributes.Art}
-                    description={work.attributes.Titel}
+                    isType={true}
+                    typeText={work.attributes.Art}
+                    titleText={work.attributes.Titel}
                     footerText={work.attributes.Stil}
                     isfooterText={true}
-                    hasVolumes={false}
-                    noOfVolumes={work.noOfVolumes}
+                    hasVolumes={true}
+                    noOfVolumes={work.attributes.AnzahlBuecher}
                     cardStyles={[]}
                   />
                 </div>
