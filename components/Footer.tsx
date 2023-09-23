@@ -61,12 +61,12 @@ const Footer = () => {
             className="w-full object-cover"
           />
         </div>
-        <div className="hidden lg:flex w-full lg:w-1/2 h-[70vh] py-[25px] bg-custom-offwhite absolute top-[-8rem] lg:top-[-16rem] left-[25%] right-[25%]">
+        <div className="hidden lg:flex w-full lg:w-1/2 h-[81vh] py-[25px] bg-custom-offwhite absolute top-[-8rem] lg:top-[-16rem] left-[25%] right-[25%]">
           <div className="w-1/2 h-full gap-2 p-12 flex flex-col justify-center">
-            <h1 className="text-[28px] text-custom-brown font-semibold">
-              Feel free to contact us
+            <h1 className="text-4xl font-extrabold text-black   lg:text-[25px] lg:text-custom-brown lg:font-semibold">
+              Feel free to <br /> contact us !
             </h1>
-            <p className="text-custom-gray text-[12px] font-normal">
+            <p className="text-custom-gray text-[11px] lg:pb-8 lg:w-[250px] font-normal">
               You have further questions or prefer the personal contact? We
               would be pleased to advise you in a non-binding consultation and
               show you the benefits of a membership. Simply call us or send us
@@ -75,13 +75,13 @@ const Footer = () => {
             </p>
             <ul className="h-full justify-evenly flex flex-col">
               <li className="flex items-center gap-2 my-2">
-                <Image src={phoneIcon} alt="phone" width={20} height={20} />
+                <Image src={phoneIcon} alt="phone" width={12} height={12} />
                 <h2 className="text-[12px] text-custom-brown font-semibold">
                   +49 (0)89 66 77 88 33
                 </h2>
               </li>
               <li className="flex items-center gap-2 my-2">
-                <Image src={emailIcon} alt="email" width={20} height={20} />
+                <Image src={emailIcon} alt="email" width={17} height={17} />
                 <h2 className="text-[12px] text-custom-brown font-semibold">
                   info@kollektiv-archiv.de
                 </h2>
@@ -89,8 +89,8 @@ const Footer = () => {
               <li className="flex items-center gap-2 my-2">
                 <Image
                   src={locationIcon}
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                   alt="location"
                 />
                 <h2 className="text-[12px] text-custom-brown font-semibold">
@@ -99,44 +99,44 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-1/2 mx-auto bg-custom-offwhite p-6 rounded-lg">
-            <div className="mb-4 flex gap-12">
-              <div className="w-2/5">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+          <div className="w-1/2 mx-auto bg-custom-offwhite p-6 pr-7 rounded-lg">
+            <div className="mb-4 flex gap-5">
+              <div className="w-1/2 lg:mt-6">
+                <label className="block text-gray-700 text-xs font-bold mb-1">
                   Name*
                 </label>
                 <input
                   type="text"
                   required={true}
                   placeholder="Name"
-                  className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-2"
+                  className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-1"
                 />
               </div>
-              <div className="w-2/5">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+              <div className="w-1/2 lg:mt-6">
+                <label className="block text-gray-700 text-xs font-bold mb-1">
                   Phone*
                 </label>
                 <input
                   type="text"
                   required={true}
                   placeholder="Phone"
-                  className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-2"
+                  className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-1"
                 />
               </div>
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
+            <div className="mb-3">
+              <label className="block text-gray-700 text-xs font-bold mb-1">
                 Email
               </label>
               <input
                 type="text"
                 required={true}
                 placeholder="Email"
-                className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-2"
+                className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-1"
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700  text-sm font-bold mb-2">
+            <div className="mb-2">
+              <label className="block text-gray-700  text-xs font-bold mb-1">
                 Message Subject*
               </label>
               <input
@@ -146,8 +146,8 @@ const Footer = () => {
                 className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-2"
               />
             </div>
-            <div className="mb-4">
-              <label className="block border-black bg-custom-offwhite text-sm font-bold mb-2">
+            <div className="mb-2">
+              <label className="block border-black bg-custom-offwhite text-xs font-bold mb-1">
                 Message*
               </label>
               <input
@@ -157,13 +157,13 @@ const Footer = () => {
                 className="border-b border-black bg-custom-offwhite focus:outline-none focus:border-blue-500 w-full py-2"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <div className="py-3 flex items-center">
                 <input
                   type="checkbox"
                   className="appearance-none border rounded-full border-custom-mobile-orange checked:appearance-auto checked:bg-custom-mobile-orange  focus:outline-none w-5 h-5 mr-2"
                 />
-                <span className="text-gray-600 text-sm">
+                <span className="text-gray-600 text-xs">
                   By submitting I accept the privacy statement.
                 </span>
               </div>

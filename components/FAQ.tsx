@@ -40,23 +40,23 @@ const FAQ = () => {
   };
 
   return (
-    <div className="mx-auto px-4 lg:px-0">
-      <span className="text-custom-mobile-orange text-[16px] font-normal">
+    <div className="mx-auto px-4 lg:pt-7 lg:ml-16 lg:px-0">
+      <span className=" ml-1 lg:ml-0  text-custom-mobile-orange  text-[16px] font-normal">
         FAQ
       </span>
-      <h1 className="mt-8 w-full md:w-1/2 leading-10 text-[26px] md:text-3xl font-semibold text-[50px]">
+      <h1 className="mt-3 lg:mt-8  w-full md:w-1/2 leading-10 text-[26px] md:text-3xl font-extrabold ">
         Frequently asked questions
       </h1>
-      <p className="w-full lg:w-2/3 my-8 text-custom-gray text-[16px] font-normal">
+      <p className="w-full  lg:w-3/3 my-5 lg:my-10 text-custom-gray text-[15px] font-normal">
         For all questions concerning the book register by Kollektum GmbH please
         do not hesitate to contact us directly. We’ve answered the most
         important frequently asked questions for you here:
       </p>
       <div className="space-y-4">
         {faqData.map((item, index) => (
-          <div key={index} className="border-t border-black-100 p-2 lg:p-4">
+          <div key={index} className="border-t border-black-100  p-2 lg:p-2">
             <div className="flex justify-between items-center">
-              <div className="font-bold text-[16px] lg:text-[20px] text-cutom-brown">
+              <div className=" font-medium lg:font-bold text-[14px] lg:text-[16px] text-cutom-brown">
                 {item.question}
               </div>
               <button
