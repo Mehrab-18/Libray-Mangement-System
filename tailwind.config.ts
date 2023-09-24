@@ -30,6 +30,7 @@ module.exports = {
         "custom-offwhite":"#e7dcc6",
         "custom-brown":"#342923",
         "custom-alert-orange":"#D94638",
+        "custom-radio-orange":"#C25B3C"
       },
       backgroundImage: {
         'pattern': "url('/pattern.png')",
