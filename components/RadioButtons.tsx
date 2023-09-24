@@ -1,13 +1,24 @@
 //Radiobuttons
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const RadioButtons = () => {
-  const [activeButton, setActiveButton] = useState(null);
+  const initialActiveButtonIndex = localStorage.getItem("activeButtonIndex");
+
+  const [activeButton, setActiveButton] = useState(initialActiveButtonIndex);
+
+  // useEffect(() => {
+  //   if (activeButton !== null) {
+  //     localStorage.setItem("activeButtonIndex", activeButton.toString());
+  //   } else {
+  //     localStorage.removeItem("activeButtonIndex");
+  //   }
+  // }, [activeButton]);
 
   const handleButtonClick = (index: any) => {
     setActiveButton(index);
+    localStorage.setItem("activeButtonIndex", index);
   };
 
   const buttons = [
@@ -17,17 +28,22 @@ const RadioButtons = () => {
   ];
 
   return (
-    <div className="w-fit flex bg-white  text-custom-gray rounded-full shadow-customBoxShadow">
+    <div
+      className="w-fit flex bg-white text-custom-gray border rounded-full p-1.5"
+      style={{
+        boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.2)",
+      }}
+    >
       {buttons.map((button, index) => (
         <Link
           key={index}
-          href={button.linkTo}
-          className={`px-4 py-2 rounded-full  ${
-            activeButton === index
-              ? "bg-orange-500 text-white"
-              : "bg-white text-custom-gray"
-          } transition-colors duration-200 ease-in-out`}
+          className={`px-4 py-1 rounded-full cursor-pointer ${
+            activeButton === index.toString()
+              ? "bg-custom-radio-orange text-white shadow-lg"
+              : " text-custom-gray"
+          } `}
           onClick={() => handleButtonClick(index)}
+          href={button.linkTo}
         >
           {button.text}
         </Link>
