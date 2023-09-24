@@ -4,23 +4,19 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const RadioButtons = () => {
-  const initialActiveButtonIndex = localStorage.getItem("activeButtonIndex");
+  const initialActiveButtonIndex =
+    typeof window !== "undefined"
+      ? localStorage.getItem("activeButtonIndex")
+      : null;
 
   const [activeButton, setActiveButton] = useState(initialActiveButtonIndex);
 
-  // useEffect(() => {
-  //   if (activeButton !== null) {
-  //     localStorage.setItem("activeButtonIndex", activeButton.toString());
-  //   } else {
-  //     localStorage.removeItem("activeButtonIndex");
-  //   }
-  // }, [activeButton]);
-
   const handleButtonClick = (index: any) => {
     setActiveButton(index);
-    localStorage.setItem("activeButtonIndex", index);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("activeButtonIndex", index);
+    }
   };
-
   const buttons = [
     { text: "Works", linkTo: "/works" },
     { text: "Libraries", linkTo: "/libraries" },
