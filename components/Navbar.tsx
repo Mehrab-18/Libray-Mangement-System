@@ -51,7 +51,7 @@ function MobileNavBar() {
   ];
 
   return (
-    <header className="bg-white w-full z-10">
+    <header className="bg-white w-full z-10 shadow-md">
       <nav className="w-full bg-transparent py-4 flex justify-end items-center">
         <div className="w-1/2 lg:w-full flex justify-between items-center">
           <div className="w-1/4 h-full ">
@@ -69,10 +69,7 @@ function MobileNavBar() {
             <ul className="flex justify-center space-x-6">
               {publicLinks.map((link, index) => (
                 <li key={index}>
-                  <Link
-                    href={link.url}
-                    className={`hover:underline ${link.customStyles}`}
-                  >
+                  <Link href={link.url} className={link.customStyles}>
                     {link.title}
                   </Link>
                 </li>

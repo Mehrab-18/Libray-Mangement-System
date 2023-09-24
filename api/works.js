@@ -1,4 +1,7 @@
-import { getRequest } from ".";
+import { getRequest, postRequest } from ".";
+
+export const loginApi = (payload) =>
+  postRequest("https://strapi-philips.onrender.com/api/auth/local", payload);
 
 export const getAllWorks = () =>
   getRequest(

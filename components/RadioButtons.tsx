@@ -1,3 +1,4 @@
+//Radiobuttons
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -16,7 +17,7 @@ const RadioButtons = () => {
   ];
 
   return (
-    <div className="w-fit flex bg-white shadow-lg text-custom-gray rounded-full">
+    <div className="w-fit flex bg-white  text-custom-gray rounded-full shadow-customBoxShadow">
       {buttons.map((button, index) => (
         <Link
           key={index}

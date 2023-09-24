@@ -120,13 +120,13 @@ const MobileFooter = () => {
         <div className="nav-links text-white font-semibold">
           <ul className="flex justify-center gap-4">
             <li>
-              <Link href="/#">About Us</Link>
+              <Link href="/About">About Us</Link>
             </li>
             <li>
               <Link href="/#">Our Mission</Link>
             </li>
             <li>
-              <Link href="/#">Works</Link>
+              <Link href="/works">Works</Link>
             </li>
             <li>
               <Link href="/#">FAQ</Link>

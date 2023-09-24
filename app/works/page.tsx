@@ -15,6 +15,10 @@ const page = () => {
   const [pageSize, setPageSize] = useState(10);
   const [totalRecords, setTotalRecords] = useState(0);
 
+  const workCardStyles = [
+    { originalBtnBgColor: "custom-offwhite", originalBtnColor: "black" },
+  ];
+
   useEffect(() => {
     getWorks();
   }, [currentPage]);
@@ -31,50 +35,56 @@ const page = () => {
 
   return (
     <Layout>
-      <div className="w-full lg:w-3/4 flex justify-center ml-0 lg:ml-4 lg:justify-start">
-        <RadioButtons />
-      </div>
-      <div className="w-full border-black-100 flex flex-col lg:flex-row">
-        <div className="w-full lg:w-1/4">
-          <div className="mx-3 my-2">
-            <SearchBar placeholder="Search" />
-          </div>
+      <div className="lg:pl-32">
+        <div className="w-full lg:w-3/4 flex justify-center ml-0 lg:ml-4 lg:justify-start mt-5 ">
+          <RadioButtons />
         </div>
-        {worksCardData === null ? (
-          <div className="w-full flex justify-center items-center">
-            <ClipLoader color="#c25b3c" size={45} />
+        <div className="hidden lg:block h-[1px] w-[1100px] my-10 bg-gray-200"></div>
+        <div className="w-full border-black-100 flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/4">
+            <div className="mx-3 my-2">
+              <SearchBar placeholder="Search" />
+            </div>
           </div>
-        ) : (
-          <div className=" w-full lg:w-[70%] flex flex-wrap justify-center lg:justify-start gap-10">
-            {worksCardData?.map((work: any, index: number) => (
-              <Link href={`works/${work.id}`}>
-                <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" key={index}>
-                  <WorkCard
-                    imageUrl={work.attributes.Titelbild.data.attributes.url}
-                    isType={true}
-                    typeText={work.attributes.Art}
-                    titleText={work.attributes.Titel}
-                    footerText={work.attributes.Stil}
-                    isfooterText={true}
-                    hasVolumes={true}
-                    noOfVolumes={work.attributes.AnzahlBuecher}
-                    cardStyles={[]}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-      <div className="my-8 lg:my-36 flex justify-center">
-        <Pagination
-          size="small"
-          total={totalRecords}
-          current={currentPage}
-          disabled={false}
-          showSizeChanger
-          onChange={handlePaginationChange}
-        />
+          {worksCardData === null ? (
+            <div className="w-full flex justify-center items-center">
+              <ClipLoader color="#c25b3c" size={45} />
+            </div>
+          ) : (
+            <div className=" w-full lg:w-[70%] flex flex-wrap justify-center lg:justify-start gap-3">
+              {worksCardData?.map((work: any, index: number) => (
+                <Link href={{ pathname: `works/${work.id}`, query: work }}>
+                  <div
+                    className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4"
+                    key={index}
+                  >
+                    <WorkCard
+                      imageUrl={work.attributes.Titelbild.data.attributes.url}
+                      isOriginal={true}
+                      originalText={work.attributes.Art}
+                      description={work.attributes.Titel}
+                      footerText={work.attributes.Stil}
+                      isfooterText={true}
+                      hasVolumes={false}
+                      noOfVolumes={work.noOfVolumes}
+                      cardStyles={[]}
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="my-8 lg:my-36 flex justify-center">
+          <Pagination
+            size="small"
+            total={totalRecords}
+            current={currentPage}
+            disabled={false}
+            showSizeChanger
+            onChange={handlePaginationChange}
+          />
+        </div>
       </div>
     </Layout>
   );

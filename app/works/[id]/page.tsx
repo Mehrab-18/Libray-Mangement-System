@@ -68,8 +68,8 @@ const page = () => {
             </Link>{" "}
           </div>
         </div>
-        <div className="product-intro w-full flex justify-center gap-12 ">
-          <div className="product-img w-1/4 flex justify-center ">
+        <div className="product-intro w-full flex flex-col lg:flex-row justify-center gap-12 ">
+          <div className="product-img w-full lg:w-1/4 flex justify-center ">
             <Image
               src={workData?.Titelbild.data.attributes.url}
               alt="product-img"
@@ -78,49 +78,51 @@ const page = () => {
               width={350}
             />
           </div>
-          <div className="product-details w-1/2 flex flex-col justify-center">
+          <div className="product-details w-full lg:w-1/2 flex flex-col justify-center">
             <div className="flex flex-col gap-2">
-              <h3 className="text-custom-mobile-orange">Object data</h3>
-              <h1 className="text-custom-brown text-[25px]">
+              <h3 className="hidden lg:block text-custom-mobile-orange">
+                Object data
+              </h3>
+              <h1 className="pl-24 lg:px-0 text-custom-brown text-[25px]">
                 {workData?.Titel}
               </h1>
             </div>
-            <div className="condition flex w-1/2 justify-start gap-6 my-6">
+            <div className="condition hidden lg:flex w-1/2 justify-start gap-6 my-6">
               <div className="text-custom-gray">
                 Condition: <span className="text-custom-brown">api</span>
               </div>
               <div className="text-custom-mobile-orange">Library: api</div>
             </div>
-            <div className="flex w-1/2 justify-start gap-6 mt-8 items-center">
-              <div className="w-1/3">
-                <button className="rounded-full hover:bg-custom-mobile-orange hover:text-white w-full border border-custom-mobile-orange text-black p-1">
+            <div className="flex w-full lg:w-1/2 justify-center lg:justify-start gap-6 mt-8 items-center">
+              <div className="w-3/4 lg:w-1/3">
+                <button className="rounded-full hover:bg-[#415479] lg:hover:bg-custom-mobile-orange hover:text-white w-full border border-[#415479] lg:border-custom-mobile-orange text-[#415479] lg:text-black p-1">
                   Inquire work
                 </button>
               </div>
-              <div className="text-custom-mobile-orange text-[16px]">
+              <div className="hidden lg:flex text-custom-mobile-orange text-[16px]">
                 Work's data
               </div>
             </div>
           </div>
         </div>
-        <div className="product-info my-12 py-12 w-full flex justify-evenly border-t border-b border-custom-offwhite">
-          <div className="info-section w-[15%] text-center">
+        <div className="product-info my-12 py-12 w-full flex flex-wrap justify-center lg:justify-evenly border-t border-b border-custom-offwhite">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Type</h3>
             <h1 className="text-custom-brown text-[20px]">{workData?.Art}</h1>
           </div>
-          <div className="info-section w-[15%] text-center">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Genre</h3>
             <h1 className="text-custom-brown text-[20px]">{workData?.Genre}</h1>
           </div>
-          <div className="info-section w-[15%] text-center">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Style</h3>
             <h1 className="text-custom-brown text-[20px]">{workData?.Stil}</h1>
           </div>
-          <div className="info-section w-[15%] text-center">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Year</h3>
             <h1 className="text-custom-brown text-[20px]">{workData?.Jahr}</h1>
           </div>
-          <div className="info-section w-[15%] text-center">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Author</h3>
             <h1 className="text-custom-brown text-[20px]">api</h1>
             <h1 className="text-custom-brown text-[20px]">
@@ -131,50 +133,54 @@ const page = () => {
               oder sein Sohn Giovanni (Auftraggeber)
             </h1>
           </div>
-          <div className="info-section w-[15%] text-center">
+          <div className="info-section w-1/2 lg:w-[15%] my-4 lg:my-0 text-center">
             <h3 className="text-custom-mobile-orange text-[16px]">Country</h3>
             <h1 className="text-custom-brown text-[20px]">{workData?.Land}</h1>
           </div>
         </div>
-        <div className="product-origin my-6 py-12 flex justify-center">
-          <div className="info-section w-[15%] flex items-center gap-2">
+        <div className="product-origin my-6 py-12 flex flex-col lg:flex-row justify-center">
+          <div className="info-section w-3/4 lg:w-[15%] flex items-center ml-12 lg:ml-0 gap-2">
             <h3 className="text-custom-mobile-orange text-[16px]">Volumes</h3>
             <h1 className="text-custom-brown text-[20px]">
               {workData?.AnzahlBuecher}
             </h1>
           </div>
-          <div className="info-section w-[15%] flex items-center gap-2">
+          <div className="info-section w-3/4 lg:w-[15%] flex items-center ml-12 lg:ml-0 gap-2">
             <h3 className="text-custom-mobile-orange text-[16px]">
               Total amount of pages
             </h3>
             <h1 className="text-custom-brown text-[20px]">api</h1>
           </div>
-          <div className="info-section w-[15%] flex items-center gap-2">
+          <div className="info-section w-3/4 lg:w-[15%] flex items-center ml-12 lg:ml-0 gap-2">
             <h3 className="text-custom-mobile-orange text-[16px]">Language</h3>
             <h1 className="text-custom-brown text-[20px]">api</h1>
           </div>
-          <div className="info-section w-[15%] flex items-center gap-2">
+          <div className="info-section w-3/4 lg:w-[15%] flex items-center ml-12 lg:ml-0 gap-2">
             <h3 className="text-custom-mobile-orange text-[16px]">Century</h3>
             <h1 className="text-custom-brown text-[20px]">
               {workData?.Jahrhundert}
             </h1>
           </div>
         </div>
-        <div className="product-remarks flex justify-center gap-8">
-          <div className="info w-[45%]">
+        <div className="product-remarks flex flex-col lg:flex-row justify-center gap-8">
+          <div className="info ml-6 lg:ml-0 w-full lg:w-[45%]">
             <h1 className="text-[25px] text-custom-brown font-semibold mb-4">
               Info
             </h1>
-            <p className="text-justify">{workData?.Information_EN}</p>
+            <p className="text-start lg:text-justify">
+              {workData?.Information_EN}
+            </p>
           </div>
-          <div className="remarks w-[45%]">
+          <div className="remarks ml-6 lg:ml-0 w-full lg:w-[45%]">
             <h1 className="text-[25px] text-custom-brown font-semibold mb-4">
               Remarks
             </h1>
-            <p className="text-justify">{workData?.Anmerkung_EN}</p>
+            <p className="text-start lg:text-justify">
+              {workData?.Anmerkung_EN}
+            </p>
           </div>
         </div>
-        <div className="product-gallery container mx-auto my-8 max-w-screen-lg overflow-x-auto">
+        <div className="ml-6 lg:ml-0 product-gallery container mx-auto my-8 max-w-screen-lg overflow-x-auto">
           <h1 className="my-8 text-custom-brown text-[20px] font-semibold">
             Photo Gallery
           </h1>
@@ -194,10 +200,10 @@ const page = () => {
           </div>
         </div>
         <div className="libraries-list flex flex-col items-center">
-          <h1 className="pl-24 my-8 text-custom-brown text-[20px] font-semibold self-start">
+          <h1 className="pl-12 lg:pl-24 my-8 text-custom-brown text-[20px] font-semibold self-start">
             Libraries containing this work
           </h1>
-          <div className="w-3/4 flex flex-wrap gap-4">
+          <div className="w-3/4 flex flex-wrap lg:gap-4">
             {libraryCards.map((library, index) => (
               <LibraryCard
                 libraryNumber={library.libraryNumber}

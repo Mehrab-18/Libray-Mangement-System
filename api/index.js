@@ -15,3 +15,16 @@ export const getRequest = async (url) => {
     return console.log(error);
   }
 };
+
+export const postRequest = async (url, data) => {
+  try {
+    console.log("In try");
+    const response = await api.post(url, data);
+    return response.data;
+  } catch (error) {
+    console.error("Error in POST request:", error);
+    console.log("In catch");
+
+    return error;
+  }
+};
