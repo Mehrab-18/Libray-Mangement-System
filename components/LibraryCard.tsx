@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const LibraryCard = ({
   id,
+  condition,
+  conditionColor,
   libraryNumber,
   works,
   dateofAddition,
@@ -14,12 +16,16 @@ const LibraryCard = ({
   btn2Text,
   isRecommended,
 }: any) => {
+  console.log("color", conditionColor);
   return (
     <div className="min-w-[300px] min-h-[300px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
       <div>
         <div className="flex justify-between mb-4">
-          <button className="bg-custom-brown rounded-full text-white text-[12px] py-2 px-4">
-            Premium
+          <button
+            style={{ backgroundColor: conditionColor }}
+            className={`rounded-full text-white text-[12px] py-2 px-4`}
+          >
+            {condition}
           </button>
           {isRecommended && (
             <button className="flex items-baseline gap-2 bg-custom-mobile-orange text-white text-[12px] py-2 px-4 rounded-lg">
