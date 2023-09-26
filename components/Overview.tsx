@@ -12,22 +12,16 @@ const Overview = ({
 }: HomePageSectionProps) => {
   return (
     <div
-      className={`w-[90%] lg:w-3/5 h-[506px] lg:h-[306px]  mx-auto ${
-        isOverview ? "bg-custom-offwhite" : "bg-white"
-      }`}
+      className={`w-[90%] lg:w-3/5 h-[506px] lg:h-[356px]  mx-auto bg-custom-offwhite`}
     >
       <div
-        className={`flex flex-col px-6  lg:flex-row ${
-          !isOverview
-            ? "flex-col-reverse lg:flex-row-reverse"
-            : "lg:flex-row flex-col-reverse"
-        }`}
+        className={`flex flex-col px-6 lg:flex-row lg:justify-center lg:flex-row flex-col-reverse`}
       >
         <div className="w-full lg:w-[360px] ">
           <h2 className="text-[25px] lg:text-[30px] text-custom-brown  lg:pl-8 lg:pt-16 lg:pb-7 font-bold">
             {heading}
           </h2>
-          <p className=" text-[13px] lg:text-[10px] w-full lg:w-[300px] pt-3 lg:pt-0 lg:pl-8 text-black pb-10">
+          <p className=" text-[16px] lg:text-[10px] w-full lg:w-[300px] pt-3 lg:pt-0 lg:pl-8 text-black pb-10">
             {paragraph}
           </p>
         </div>
@@ -35,7 +29,9 @@ const Overview = ({
           <Image
             src={imageUrl}
             alt="Your Image"
-            className="w-3/3 lg:w-2/3 h-2/3"
+            // width={100}
+            // height={100}
+            className="w-3/3 lg:w-3/4 h-3/4 object-cover"
           />
         </div>
       </div>

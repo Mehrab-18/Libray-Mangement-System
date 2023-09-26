@@ -15,23 +15,12 @@ import HomeLibrarySection from "@/components/HomeLibrarySection";
 import FAQ from "@/components/FAQ";
 import Quotation from "@/components/Quotation";
 import MobileFooter from "@/components/MobileFooter";
-import Layout from "@/components/Layout";
 import StartWithUs from "@/components/StartWithUs";
 import Showroom from "@/components/Showroom";
-const book1 =
-  require("@/public/images/Foto_07_11_22_11_39_21_copy_6385f42326.png").default;
-const book2 =
-  require("@/public/images/Foto_10_06_23_11_16_51_copy_93e913a9f1.png").default;
 const book3 =
   require("@/public/images/Foto_11_01_70_01_58_40_copy_3837f10d48.png").default;
 const book4 =
   require("@/public/images/Foto_11_01_70_02_14_11_copy_019975fe24.png").default;
-const book5 =
-  require("@/public/images/Foto_11_10_22_13_29_34_copy_ce228c5ee1.png").default;
-const book6 =
-  require("@/public/images/Foto_17_05_23_16_00_36_copy_7198b6e1b6.png").default;
-const book7 =
-  require("@/public/images/Foto_21_09_22_17_08_58_copy_20d2720ea8.png").default;
 const book8 =
   require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
 const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;

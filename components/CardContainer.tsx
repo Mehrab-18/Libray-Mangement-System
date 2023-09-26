@@ -40,6 +40,8 @@ const CardContainer: React.FC<CardContainerProps> = ({
                 dateofAddition={libraryCard.dateofAddition}
                 isBtn1={libraryCard.isBtn1}
                 btn1Text={libraryCard.btn1Text}
+                isRecommended={true}
+                condition={"premium"}
               />
             ))
           : isWork

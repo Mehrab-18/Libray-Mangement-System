@@ -6,7 +6,7 @@ import Link from "next/link";
 const LibraryCard = ({
   id,
   condition,
-  conditionColor,
+  conditionColor = "#342923",
   libraryNumber,
   works,
   dateofAddition,
@@ -18,26 +18,28 @@ const LibraryCard = ({
 }: any) => {
   console.log("color", conditionColor);
   return (
-    <div className="min-w-[300px] min-h-[300px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
-      <div>
-        <div className="flex justify-between mb-4">
+    <div className="min-w-[290px] min-h-[320px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
+      <div className="h-3/4 lg:flex lg:flex-col lg:justify-between border border-black-100">
+        <div className="flex justify-between">
           <button
             style={{ backgroundColor: conditionColor }}
-            className={`rounded-full text-white text-[12px] py-2 px-4`}
+            className={`w-[30%] rounded-full text-white text-[12px] py-2 px-4`}
           >
             {condition}
           </button>
           {isRecommended && (
-            <button className="flex items-baseline gap-2 bg-custom-mobile-orange text-white text-[12px] py-2 px-4 rounded-lg">
-              <FiThumbsUp /> Recommended
+            <button className="w-[50%] flex items-baseline gap-2 bg-custom-mobile-orange text-white text-[12px] py-2 px-4 rounded-lg">
+              <span className="flex items-baseline gap-2">
+                <FiThumbsUp /> Recommended
+              </span>
             </button>
           )}
         </div>
-        <div className="mb-4">
+        <div className="">
           <h2 className="text-[12px] text-[#989390]">Library Number</h2>
           <p className="text-[20px] text-custom-brown">{libraryNumber}</p>
         </div>
-        <div className="mb-4 flex justify-start gap-10">
+        <div className="flex justify-start gap-10">
           <div>
             <h2 className="text-[12px] text-[#989390]">Extent</h2>
             <p className="text-[16px] text-custom-brown">{`${works} Works`}</p>

@@ -27,10 +27,10 @@ const Hero = () => {
             inspired by amazing collector'sitems is right here
           </h5>
         </div>
-        <div className="w-full lg:w-3/4 flex justify-center">
+        <div className="w-full lg:w-[70%] flex justify-center">
           <SearchBar placeholder="Search library number" />
         </div>
-        <div className="flex my-4 w-full  md:w-[70%] justify-center gap-4">
+        <div className="flex my-4 w-full  md:w-[60%] justify-center gap-4">
           <CustomLink
             title="All Works"
             url="/works"

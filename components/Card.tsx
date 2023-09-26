@@ -9,14 +9,14 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ footerText, imageUrl }) => {
   return (
-    <div className="min-w-[300px] min-h-[300px] p-4 border shadow-lg rounded-lg m-2">
-      <Image
-        src={imageUrl}
-        alt="Card Image"
-        className="w-2/3 h-3/4 object-contain"
-      />
-      <div className="mt-4 text-center">
-        <p className="text-lg font-semibold">{footerText}</p>
+    <div className="min-w-[250px] min-h-[250px] border flex flex-col items-center shadow-lg rounded-lg m-2">
+      <div className="w-full h-3/4 p-4 mb-4 bg-[#F4F4F4]">
+        <Image src={imageUrl} alt="Card Image" className="object-contain" />
+      </div>
+      <div className="h-1/4 w-full bg-[white]">
+        <div className="text-center h-full flex items-center justify-center">
+          <p className="text-[16px] font-semibold">{footerText}</p>
+        </div>
       </div>
     </div>
   );

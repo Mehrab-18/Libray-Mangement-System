@@ -32,11 +32,13 @@ const AboutUs: React.FC = () => {
         {/* Section 2 */}
         <div className="flex justify-center flex-col lg:flex-row">
           {/* Card 1 */}
-          <div className="w-full lg:max-w-xs bg-white rounded-lg p-4">
+          <div className="w-full lg:w-[20%] bg-white rounded-lg p-4 lg:flex lg:flex-col lg:items-center">
             <Image
               src={img1}
+              width={100}
+              height={100}
               alt="Card 1"
-              className="w-full h-32 object-contain rounded-md"
+              className="object-contain rounded-md"
             />
             <h3 className="text-xl font-semibold mt-4">Manage</h3>
             <p className="text-gray-600 mt-2">
@@ -46,13 +48,13 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           {/* Card 2 */}
-          <div className="w-full lg:max-w-xs bg-white rounded-lg p-4">
+          <div className="w-full lg:w-[20%] bg-white rounded-lg p-4 lg:flex lg:flex-col lg:items-center">
             <Image
               src={img2}
               width={100}
               height={100}
               alt="Card 1"
-              className="w-full h-32 object-contain rounded-md"
+              className="object-contain rounded-md"
             />
             <h3 className="text-xl font-semibold mt-4">Present</h3>
             <p className="text-gray-600 mt-2">
@@ -62,11 +64,13 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           {/* Card 3 */}
-          <div className="w-full lg:max-w-xs bg-white rounded-lg  p-4">
+          <div className="w-full lg:max-w-xs bg-white rounded-lg  p-4 lg:flex lg:flex-col lg:items-center">
             <Image
               src={img3}
               alt="Card 1"
-              className="w-full h-32 object-contain rounded-md"
+              width={100}
+              height={100}
+              className="object-contain rounded-md"
             />
             <h3 className="text-xl font-semibold mt-4">Sell</h3>
             <p className="text-gray-600 mt-2">
