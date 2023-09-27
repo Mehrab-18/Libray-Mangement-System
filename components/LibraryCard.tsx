@@ -19,7 +19,7 @@ const LibraryCard = ({
   console.log("color", conditionColor);
   return (
     <div className="min-w-[290px] min-h-[320px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
-      <div className="h-3/4 lg:flex lg:flex-col lg:justify-between border border-black-100">
+      <div className="h-3/4 lg:flex lg:flex-col lg:justify-between ">
         <div className="flex justify-between">
           <button
             style={{ backgroundColor: conditionColor }}
