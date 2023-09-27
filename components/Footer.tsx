@@ -61,19 +61,19 @@ const Footer = () => {
             className="w-full object-cover h-[300px]"
           />
         </div>
-        <div className="hidden lg:flex w-full lg:w-1/2 h-[81vh] py-[25px] bg-custom-offwhite absolute top-[-8rem] lg:top-[-16rem] left-[25%] right-[25%]">
-          <div className="w-1/2 h-full gap-2 p-12 flex flex-col justify-center">
-            <h1 className="text-4xl font-extrabold text-black   lg:text-[25px] lg:text-custom-brown lg:font-semibold">
+        <div className="hidden lg:flex w-full lg:w-1/2 h-[62vh] 2xl:h-[55vh] py-[25px] bg-custom-offwhite absolute top-[-8rem] lg:top-[-15rem] 2xl:top-[-24rem] left-[25%] right-[25%]">
+          <div className="w-1/2 h-full gap-2 p-8 flex flex-col justify-center">
+            <h1 className="text-4xl mb-2 font-semibold text-black   lg:text-[40px] lg:text-custom-brown lg:font-medium">
               Feel free to <br /> contact us !
             </h1>
-            <p className="text-custom-gray text-[11px] lg:pb-8 lg:w-[250px] font-normal">
+            <p className="text-custom-gray text-[11px] lg:pb-8 lg:w-[270px] leading-4 tracking-wide font-light">
               You have further questions or prefer the personal contact? We
               would be pleased to advise you in a non-binding consultation and
               show you the benefits of a membership. Simply call us or send us
               an e-mail with your request for contact. We are pleased to be of
               service for you.
             </p>
-            <ul className="h-full justify-evenly flex flex-col">
+            <ul className=" justify-evenly flex flex-col">
               <li className="flex items-center gap-2 my-2">
                 <Image src={phoneIcon} alt="phone" width={12} height={12} />
                 <h2 className="text-[12px] text-custom-brown font-semibold">
@@ -99,7 +99,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-1/2 mx-auto bg-custom-offwhite p-6 pr-7 rounded-lg">
+          <div className="w-1/2 mx-auto bg-custom-offwhite p-6 lg:pt-[3.25rem] pr-7 rounded-lg">
             <div className="mb-4 flex gap-5">
               <div className="w-1/2 lg:mt-6">
                 <label className="block text-gray-700 text-xs font-bold mb-1">

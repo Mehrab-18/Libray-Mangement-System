@@ -11,27 +11,25 @@ const Overview = ({
   isOverview,
 }: HomePageSectionProps) => {
   return (
-    <div
-      className={`w-[90%] lg:w-3/5 h-[506px] lg:h-[356px]  mx-auto bg-custom-offwhite`}
-    >
+    <div className={` w-4/5 2xl:w-3/5 h-[506px] shadow-xl mx-auto bg-custom-offwhite`}>
       <div
-        className={`flex flex-col px-6 lg:flex-row lg:justify-center lg:flex-row flex-col-reverse`}
+        className={`flex flex-col h-full lg:flex-row lg:flex-row flex-col-reverse`}
       >
-        <div className="w-full lg:w-[360px] ">
-          <h2 className="text-[25px] lg:text-[30px] text-custom-brown  lg:pl-8 lg:pt-16 lg:pb-7 font-bold">
+        <div className="w-full h-full justify-center flex flex-col items-center lg:w-1/2">
+          <h2 className="text-[25px] xl:text-[45px] pl-2 sm:pl-0 w-full xl:pl-16 tracking-wide text-custom-brown lg:pt-16 lg:pb-7 font-semibold">
             {heading}
           </h2>
-          <p className=" text-[16px] lg:text-[10px] w-full lg:w-[300px] pt-3 lg:pt-0 lg:pl-8 text-black pb-10">
+          <p className=" text-[13px] tracking-wider font-light leading-7 xl:text-[16px] px-2 sm:pl-0 w-full xl:w-[450px] pt-3 lg:pt-0 text-black pb-10">
             {paragraph}
           </p>
         </div>
-        <div className="w-full  lg:w-[450px] pt-7 lg:pt-0  lg:h-[350px] lg:pb-7  lg:py-2 flex justify-center items-center ">
+        <div className="w-full  h-full justify-center flex items-center lg:w-1/2 p-10 pt-7 lg:pt-0  lg:pb-7  lg:py-2 flex">
           <Image
             src={imageUrl}
             alt="Your Image"
-            // width={100}
-            // height={100}
-            className="w-3/3 lg:w-3/4 h-3/4 object-cover"
+            width={600}
+            height={180}
+            className=""
           />
         </div>
       </div>

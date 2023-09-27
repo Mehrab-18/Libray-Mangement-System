@@ -13,20 +13,20 @@ const Mission: React.FC<MissionComponentProps> = ({
   thumbnailUrl,
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row justify-start px-3 lg:px-0 lg:ml-32 lg:gap-28 lg:py-28 w-full">
-      <div className="left-section w-full lg:w-1/3 px-4 lg:px-0">
+    <div className="flex flex-col lg:flex-row items-center justify-center  lg:py-28 w-full">
+      <div className=" flex items-center justify-end w-full lg:w-1/2">
         <Image src={thumbnail} alt="Thumbnail" className="object-contain" />
       </div>
-      <div className="right-section w-full lg:w-2/4">
+      <div className=" w-full lg:w-1/2 lg:pl-[100px]">
         {/* <div className="mission-details"> */}
-        <div className="text-custom-mobile-orange pl-3 mt-7 lg:mt-5  text-xs lg:ml-0 my-4 lg:my-0">
+        <div className="text-custom-mobile-orange ml-3 mt-7 lg:mt-5  text-xs my-4 lg:my-0">
           Our Mission
         </div>
-        <div className=" text-2xl lg:text-3xl lg:py-7 gap-10 w-[270px] lg:w-full ml-3 lg:ml-0 font-semibold">
+        <div className=" text-2xl lg:text-4xl lg:py-7 gap-10 w-[270px] lg:w-full ml-3 lg:ml-0 font-semibold">
           From&nbsp; book&nbsp; Lovers&nbsp; for&nbsp; book&nbsp;
           <br className="hidden lg:block" /> lovers
         </div>
-        <div className="text-xs  ml-3 text-left  lg:ml-0 my-4 w-[300px] lg:w-2/4 lg:my-0">
+        <div className="text-sm tracking-wider font-light ml-3 text-left leading-5 lg:ml-0 my-4 w-[300px] lg:w-[400px] 2xl:w-2/4 lg:my-0">
           Valuable books need an appropriate environment. Not only material but
           also ideal values are associated with them. As lovers of special
           books, we know this very well. We ourselves have many years of
