@@ -58,7 +58,7 @@ const Footer = () => {
           <Image
             src={footerImg}
             alt="library-background"
-            className="w-full object-cover"
+            className="w-full object-cover h-[250px]"
           />
         </div>
         <div className="hidden lg:flex w-full lg:w-1/2 h-[81vh] py-[25px] bg-custom-offwhite absolute top-[-8rem] lg:top-[-16rem] left-[25%] right-[25%]">
