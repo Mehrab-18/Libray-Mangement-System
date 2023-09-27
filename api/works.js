@@ -18,6 +18,11 @@ export const getSpecialWorks = () =>
     "https://strapi-philips.onrender.com/api/besondere-werke?populate=deep,3"
   );
 
+export const getHomeWorks = () =>
+  getRequest(
+    "https://strapi-philips.onrender.com/api/stammwerkes?populate=deep,2&sort%5b0%5d=Titel:asc"
+  );
+
 export const getSingleWork = (id) =>
   getRequest(
     `https://strapi-philips.onrender.com/api/stammwerkes/${id}?populate=deep,3`

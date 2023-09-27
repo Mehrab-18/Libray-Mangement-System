@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import LibraryCard from "./LibraryCard";
 import { LibraryCardProps, WorkCardProps } from "@/types";
 import WorkCard from "./WorkCard";
+import { getHomeWorks, getSpecialWorks } from "@/api/works";
+import { getHomepageLibraries } from "@/api/libraries";
 
 interface CardData {
   imageUrl: string;
@@ -17,50 +20,95 @@ interface CardContainerProps {
   workCards?: WorkCardProps[];
 }
 
-const workCardStyles = [
-  { originalBtnBgColor: "custom-offwhite", originalBtnColor: "black" },
-];
-
 const CardContainer: React.FC<CardContainerProps> = ({
   cards,
   isLibrary,
   libraryCards,
-  workCards,
   isWork,
 }) => {
+  const [homeBooks, setHomeBooks] = useState<any>();
+  const [homeWorks, setHomeWorks] = useState<any>();
+  const [homeLibraries, setHomeLibraries] = useState<any>();
+
+  useEffect(() => {
+    getHomeBooks();
+    getWorks();
+    getLibraries();
+  }, []);
+
+  const getHomeBooks = async () => {
+    const res: any = await getSpecialWorks();
+    setHomeBooks(res?.data.data.attributes.stammwerkes?.data);
+  };
+
+  const getWorks = async () => {
+    const res = await getHomeWorks();
+    setHomeWorks(res?.data?.data);
+  };
+
+  const getLibraries = async () => {
+    const res = await getHomepageLibraries();
+    setHomeLibraries(res?.data?.data);
+  };
+
+  const calculateLibraryWorks = (library: any) => {
+    if (library) {
+      return library.besitzes.length;
+    }
+  };
+
+  function formatDateToDDYYYYMM(dateString: string) {
+    const createdAtDate = new Date(dateString);
+
+    const year = createdAtDate.getFullYear();
+    const month = String(createdAtDate.getMonth() + 1).padStart(2, "0"); // Adding 1 because months are zero-indexed
+    const day = String(createdAtDate.getDate()).padStart(2, "0");
+
+    const formattedDate = `${day}-${year}-${month}`;
+
+    return formattedDate;
+  }
+
   return (
     <div className="overflow-x-auto custom-scrollbar">
       <div className="flex space-x-2 ">
         {isLibrary
-          ? libraryCards?.map((libraryCard, index) => (
+          ? homeLibraries?.map((libraryCard: any, index: any) => (
               <LibraryCard
-                id={1}
-                libraryNumber={libraryCard.libraryNumber}
-                works={libraryCard.works}
-                dateofAddition={libraryCard.dateofAddition}
-                isBtn1={libraryCard.isBtn1}
-                btn1Text={libraryCard.btn1Text}
+                id={libraryCard.id}
+                libraryNumber={libraryCard.username}
+                works={calculateLibraryWorks(libraryCard)}
+                dateofAddition={formatDateToDDYYYYMM(libraryCard?.createdAt)}
+                isBtn1={true}
+                btn1Text={"Go to Library"}
                 isRecommended={true}
                 condition={"premium"}
               />
             ))
           : isWork
-          ? workCards?.map((work, index) => (
+          ? homeWorks?.map((work: any, index: number) => (
               <WorkCard
+                imageUrl={work.attributes.Titelbild?.data?.attributes?.url}
+                // isOriginal={work.attributes}
+                // originalText={work.originalText}
+                // description={work.description}
                 isfooterText={true}
-                imageUrl={work.imageUrl}
-                isOriginal={work.isOriginal}
-                originalText={work.originalText}
-                description={work.description}
-                footerText={work.footerText}
-                cardStyles={workCardStyles}
+                footerText={work.attributes.Genre}
+                // cardStyles={workCardStyles}
+                isType={true}
+                typeText={work.attributes.Art}
+                hasVolumes={false}
+                // noOfVolumes={2}
+                titleText={work.attributes.Titel}
+                // isfooterText2={true}
+                // footerText2={"Condition: very good"}
               />
             ))
-          : cards?.map((card, index) => (
+          : homeBooks?.map((work: any, index: number) => (
               <Card
                 key={index}
-                imageUrl={card.imageUrl}
-                footerText={card.footerText}
+                imageUrl={work.attributes.Titelbild?.data?.attributes?.url}
+                footerText={work.attributes.Titel}
               />
             ))}
       </div>

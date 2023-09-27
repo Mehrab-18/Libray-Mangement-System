@@ -22,7 +22,9 @@ const Card: React.FC<CardProps> = ({ footerText, imageUrl }) => {
         <Image
           src={imageUrl}
           alt="Card Image"
-          className="block w-full h-auto object-contain"
+          width={150}
+          height={200}
+          className="object-contain"
         />
       </div>
       <div

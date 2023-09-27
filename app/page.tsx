@@ -1,3 +1,4 @@
+import React from "react";
 import { HomeProps } from "@/types";
 import { Footer, Hero, NavBar } from "@/components";
 import PrivacyButton from "@/components/PrivacyButton";
@@ -18,6 +19,7 @@ import Quotation from "@/components/Quotation";
 import MobileFooter from "@/components/MobileFooter";
 import StartWithUs from "@/components/StartWithUs";
 import Showroom from "@/components/Showroom";
+import { getSpecialWorks } from "@/api/works";
 const book3 =
   require("@/public/images/Foto_11_01_70_01_58_40_copy_3837f10d48.png").default;
 const book4 =
@@ -201,7 +203,7 @@ export default async function Home({ searchParams }: HomeProps) {
           Showroom Gallery
         </h1>
         <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto ">
-          <CardContainer libraryCards={libraryCards} isLibrary={true} />
+          <CardContainer isLibrary={true} />
         </div>
         <div className="w-full text-center">
           <Link
@@ -225,7 +227,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="py-12">
         <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto ">
-          <CardContainer workCards={workCard} isWork={true} />
+          <CardContainer isWork={true} />
         </div>
         <div className="w-full text-center">
           <Link
