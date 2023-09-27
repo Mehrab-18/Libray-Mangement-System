@@ -1,5 +1,6 @@
 "use client";
 
+import { PiWarningCircleBold } from "react-icons/pi";
 import Image from "next/image";
 const books = require("@/public/images/Homepage Books_1.png");
 
@@ -8,7 +9,7 @@ import CustomLink from "./CustomLink";
 
 const Hero = () => {
   return (
-    <div className="flex justify-between bg-custom-offwhite">
+    <div className="flex flex-col-reverse lg:flex-row lg:justify-between bg-custom-offwhite">
       <div className="w-full lg:w-1/2 px-2 lg:px-8 py-12 flex flex-col justify-center items-center">
         <div className="text-custom-mobile-orange my-4 text-center	">
           <h4>Manage, display and make an offer to buy</h4>
@@ -48,8 +49,16 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="hidden lg:block w-2/5">
-        <Image src={books} alt="books" />
+      <div className="flex flex-col items-center justify-center gap-10 mt-0 w-full lg:w-2/5 ">
+        <div className="mt-0 bg-custom-offwhite flex flex-row gap-3 py-2 items-center justify-center shadow-2xl mx-auto  w-[280px]">
+          <span className="text-red-400">
+            <PiWarningCircleBold />
+          </span>{" "}
+          Kollectiv Archiv warns of scams !
+        </div>
+        <div className="hidden lg:block ">
+          <Image src={books} alt="books" width={500} height={650} />
+        </div>
       </div>
     </div>
   );

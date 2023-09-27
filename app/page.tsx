@@ -1,5 +1,6 @@
 import { HomeProps } from "@/types";
 import { Footer, Hero, NavBar } from "@/components";
+import PrivacyButton from "@/components/PrivacyButton";
 const img1 = require("@/public/images/762.jpg").default;
 import AboutUs from "@/components/About";
 import Link from "next/link";
@@ -159,6 +160,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="overflow-hidden">
+      <div className="hidden lg:block">
+        <PrivacyButton />
+      </div>
       <NavBar />
       <Hero />
       <AboutUs />

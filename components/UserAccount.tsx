@@ -11,12 +11,10 @@ import { Pagination } from "antd";
 import { BsChevronDown } from "react-icons/bs";
 
 const logo = require("@/public/images/LOGO 2_2.svg");
-//Mehrab Bhai footballer
 
 import Link from "next/link";
 
 function UserAccount() {
-  const [abc, setAbc] = useState("");
   const [showDropdownOpen, setShowDropdownOpen] = useState(false);
   const [selectedShowValue, setSelectedShowValue] = useState(9);
 

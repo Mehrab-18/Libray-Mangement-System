@@ -12,8 +12,8 @@ const Search = ({ placeholder }: SearchbarProps) => {
 
   return (
     <div className="w-full relative shadow-sm ">
-      <div className="flex items-center  border border-gray-300 rounded-full overflow-hidden">
-        <div className="px-3 py-2">
+      <div className="flex items-center bg-white  border border-gray-300 rounded-full overflow-hidden">
+        <div className="px-3 py-2 bg-white">
           <FiSearch style={{ color: "#f97316" }} />
         </div>
         <input
