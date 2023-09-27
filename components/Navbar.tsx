@@ -10,6 +10,7 @@ const logo = require("@/public/images/LOGO 2_2.svg");
 import { FiMenu, FiX } from "react-icons/fi"; // Example icons (you can use any icon from the library)
 import { NavLinkProps } from "@/types";
 import { CustomButton } from ".";
+import { FaRegUser } from "react-icons/fa";
 import CustomLink from "./CustomLink";
 import ContactModal from "./ContactModal";
 const callIcon = require("@/public/icons/Contact Us_Button_Header.svg");
@@ -84,10 +85,13 @@ function MobileNavBar() {
               <h1 className="text-custom-mobile-orange font-semibold">EN</h1>
             </div>
             <button
-              className="text-white rounded-full bg-custom-gray min-w-[130px] h-10"
+              className="text-white rounded-full flex flex-row items-center justify-center gap-2 bg-custom-gray px-6 h-10"
               onClick={handleLoginModal}
             >
-              <span className={`flex-1 `}>Login</span>
+              <span>
+                <FaRegUser />
+              </span>
+              <span>Login</span>
             </button>
             <div>
               <Image src={callIcon} width={45} height={45} alt="call-icon" />
