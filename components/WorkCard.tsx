@@ -18,9 +18,9 @@ const WorkCard = ({
   footerMargin,
 }: any) => {
   console.log("In workCard");
-
+  // min-w-[400px] min-h-[440px] border flex flex-col items-center shadow-lg rounded-lg m-2 relative bg-[#F4F4F4]
   return (
-    <div className="min-w-[250px] min-h-[315px] flex flex-col justify-between border shadow-lg rounded-lg m-2 overflow-hidden">
+    <div className="min-w-[400px] min-h-[440px] flex flex-col justify-between border shadow-lg rounded-lg m-2 overflow-hidden">
       <div className="w-full h-[55%] bg-[#F4F4F4] relative">
         <Image
           src={imageUrl}

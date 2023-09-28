@@ -3,49 +3,50 @@
 import { PiWarningCircleBold } from "react-icons/pi";
 import Image from "next/image";
 const books = require("@/public/images/Homepage Books_1.png");
+import './custom-fonts.css'
 
 import { CustomButton, SearchBar } from "@/components";
 import CustomLink from "./CustomLink";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row lg:justify-between bg-custom-offwhite">
-      <div className="w-full lg:w-1/2 px-2 lg:px-8 py-12 flex flex-col justify-center items-center">
+    <div className="flex flex-col-reverse lg:flex-row justify-around bg-custom-offwhite px-0 2xl:px-[10rem]">
+      <div className="w-full lg:w-1/3 px-2 lg:px-8 py-12 flex flex-col justify-center items-center">
         <div className="text-custom-mobile-orange my-4 text-center	">
           <h4>Manage, display and make an offer to buy</h4>
         </div>
-        <div className=" text-center	my-2 text-3xl font-bold">
-          <h2>
+        <div className=" text-center	my-2 text-4xl 2xl:text-5xl font-semibold ">
+          <div>
             You're bound to find
             <br />
             more here.
-          </h2>
+          </div>
         </div>
-        <div className="text-center	my-4 font-medium">
-          <h5>
+        <div className="text-center	my-4 mb-8">
+          <div className="text-sm text-custom-gray font-ProximaNova tracking-wide">
             Everthing you need to stay current, showcase your book collection,
             meet like minded individuals and potential customers, and be
             inspired by amazing collector'sitems is right here
-          </h5>
+          </div>
         </div>
-        <div className="w-full lg:w-[70%] flex justify-center">
+        <div className="w-full flex justify-center">
           <SearchBar placeholder="Search library number" />
         </div>
-        <div className="flex my-4 w-full  md:w-[60%] justify-center gap-4">
+        <div className="flex my-4 justify-center gap-2 lg:gap-4">
           <CustomLink
             title="All Works"
             url="/works"
-            customStyles="flex w-full lg:w-1/2 items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full h-9 w-32"
+            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
           />
           <CustomLink
             title="All libraries"
             url="/libraries"
-            customStyles="flex w-full lg:w-1/2 items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full h-9 w-32"
+            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
           />
           <CustomLink
             title="Showrooms"
             url="/showroom"
-            customStyles="flex w-full lg:w-1/2 items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full h-9 w-32"
+            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
           />
         </div>
       </div>
@@ -57,7 +58,7 @@ const Hero = () => {
           Kollectiv Archiv warns of scams !
         </div>
         <div className="hidden lg:block ">
-          <Image src={books} alt="books" width={500} height={650} />
+          <Image src={books} alt="books" width={700} height={750} />
         </div>
       </div>
     </div>

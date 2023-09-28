@@ -42,6 +42,7 @@ export default async function Home({ searchParams }: HomeProps) {
     { imageUrl: book13, footerText: "Breviarium Grimani" },
     { imageUrl: book3, footerText: "Speyerer Evangelistar" },
     { imageUrl: book4, footerText: "Das Sakramentar Heinrichs II" },
+    { imageUrl: book4, footerText: "Das Sakramentar Heinrichs II" },
   ];
 
   const libraryCards = [
@@ -157,7 +158,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <NavBar />
       <Hero />
       <AboutUs />
-      <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto">
+      <div className="container ml-auto my-8 overflow-x-auto">
         <CardContainer cards={cards} />
       </div>
       <div className="w-full flex justify-center my-8">
@@ -202,7 +203,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <h1 className="text-[#0D1118] text-[19px] font-semibold pl-12 lg:pl-24">
           Showroom Gallery
         </h1>
-        <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto ">
+        <div className="container ml-auto my-8 overflow-x-auto ">
           <CardContainer isLibrary={true} />
         </div>
         <div className="w-full text-center">
@@ -218,7 +219,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <h1 className="text-custom-brown pl-3 lg:pl-0 text-start font-semibold w-full lg:w-5/12 text-[24px] lg:text-[20px]">
           Discover inspiring works.
         </h1>
-        <p className="text-custom-gray text-[12px] p-3 lg:p-0 w-full lg:w-5/12">
+        <p className="text-custom-gray text-[12px] font-light leading-5 p-3 lg:p-0 w-full lg:w-3/12">
           Browse through our new arrivals that have been registered recently or
           look through all facsimiles and other works. With just a few clicks
           you can filter by genres and other categories or search specifically
@@ -226,7 +227,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </p>
       </div>
       <div className="py-12">
-        <div className="container mx-auto my-8 max-w-screen-lg overflow-x-auto ">
+        <div className="container ml-auto my-8 overflow-x-auto ">
           <CardContainer isWork={true} />
         </div>
         <div className="w-full text-center">
@@ -238,19 +239,21 @@ export default async function Home({ searchParams }: HomeProps) {
           </Link>
         </div>
       </div>
-      <div className="py-12 my-10 bg-custom-offwhite w-full flex justify-center relative">
-        <div className="hidden md:w-1/3 xl:block">
+      <div className="py-12 xl:mt-[175px] xl:h-[800px] my-10 bg-custom-offwhite w-full flex justify-center relative">
+        <div className="hidden md:w-1/2 xl:block">
           <Image
             src={libraryImg}
             alt="library-img"
-            className="w-[30rem] top-[-4rem] left-[4rem] absolute"
+            // width={550}
+            // height={550}
+            className="top-[-5rem] left-[15rem] absolute w-32 h-32 lg:w-[400px] lg:h-[500px] 2xl:w-[550px] 2xl:h-[550px]"
           />
         </div>
         <div className="w-full md:w-1/2">
           <FAQ />
         </div>
       </div>
-      <div className="py-34">
+      <div className="py-34 lg:mb-[20rem] 2xl:mb-[24rem] lg:mt-10">
         <Quotation />
       </div>
       <div className="hidden lg:block py-34">
