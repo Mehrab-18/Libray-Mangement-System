@@ -61,7 +61,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
     const createdAtDate = new Date(dateString);
 
     const year = createdAtDate.getFullYear();
-    const month = String(createdAtDate.getMonth() + 1).padStart(2, "0"); // Adding 1 because months are zero-indexed
+    const month = String(createdAtDate.getMonth() + 1).padStart(2, "0");
     const day = String(createdAtDate.getDate()).padStart(2, "0");
 
     const formattedDate = `${day}-${year}-${month}`;

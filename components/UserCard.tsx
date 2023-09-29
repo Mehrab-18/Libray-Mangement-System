@@ -8,7 +8,7 @@ function UserCard() {
       {/*This is the main div*/}
       <div className="w-[390px] lg:w-[280px] h-[400px] mt-3 border shadow-2xl ">
         {/*This is the edit icon div*/}
-        <div className="flex flex-row justify-end bg-gray-100 text-red-400 w-full pt-2 pr-2">
+        <div className="cursor-pointer flex flex-row justify-end bg-gray-100 text-red-400 w-full pt-2 pr-2">
           <BiEdit />
         </div>
         {/*This is the book image div*/}

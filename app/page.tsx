@@ -19,13 +19,10 @@ import Quotation from "@/components/Quotation";
 import MobileFooter from "@/components/MobileFooter";
 import StartWithUs from "@/components/StartWithUs";
 import Showroom from "@/components/Showroom";
-import { getSpecialWorks } from "@/api/works";
 const book3 =
   require("@/public/images/Foto_11_01_70_01_58_40_copy_3837f10d48.png").default;
 const book4 =
   require("@/public/images/Foto_11_01_70_02_14_11_copy_019975fe24.png").default;
-const book8 =
-  require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
 const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;
 const book10 = require("@/public/images/IMG_4251_copy_bb12520a0a.png").default;
 const book11 = require("@/public/images/IMG_6477_copy_34d0993ee2.png").default;
@@ -43,111 +40,6 @@ export default async function Home({ searchParams }: HomeProps) {
     { imageUrl: book3, footerText: "Speyerer Evangelistar" },
     { imageUrl: book4, footerText: "Das Sakramentar Heinrichs II" },
     { imageUrl: book4, footerText: "Das Sakramentar Heinrichs II" },
-  ];
-
-  const libraryCards = [
-    {
-      id: 1,
-      libraryNumber: "2023 1234 5246",
-      works: 5,
-      dateofAddition: "15.08.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 2,
-      libraryNumber: "2023 9876 5432",
-      works: 8,
-      dateofAddition: "22.09.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 3,
-      libraryNumber: "2023 5678 1234",
-      works: 3,
-      dateofAddition: "10.07.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 4,
-      libraryNumber: "2023 1111 2222",
-      works: 12,
-      dateofAddition: "01.12.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 5,
-      libraryNumber: "2023 6543 7890",
-      works: 6,
-      dateofAddition: "05.06.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 6,
-      libraryNumber: "2023 8888 9999",
-      works: 10,
-      dateofAddition: "18.10.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 7,
-      libraryNumber: "2023 2222 3333",
-      works: 4,
-      dateofAddition: "03.03.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-    {
-      id: 8,
-      libraryNumber: "2023 4444 5555",
-      works: 7,
-      dateofAddition: "12.09.2023",
-      isBtn1: true,
-      btn1Text: "Go to library",
-    },
-  ];
-
-  const workCard = [
-    {
-      imageUrl: book8,
-      isOriginal: true,
-      originalText: "Original",
-      description: "Das Jahrhundert in Wort, Bild und Ton - 2000 bis 2004",
-      footerText: "Nachschlagewerke",
-    },
-    {
-      imageUrl: book9,
-      isOriginal: true,
-      originalText: "Original",
-      description: "Unser Jahrhundert in Wort, Bild und Ton",
-      footerText: "Nachschlagewerke",
-    },
-    {
-      imageUrl: book10,
-      isOriginal: true,
-      originalText: "Original",
-      description: "Aratea Vaticana",
-      footerText: "Nachschlagewerke",
-    },
-    {
-      imageUrl: book11,
-      isOriginal: true,
-      originalText: "Original",
-      description: "Alexander Magnus",
-      footerText: "Nachschlagewerke",
-    },
-    {
-      imageUrl: book8,
-      isOriginal: true,
-      originalText: "Original",
-      description: "Das Jahrhundert in Wort, Bild und Ton - 2000 bis 2004",
-      footerText: "Nachschlagewerke",
-    },
   ];
 
   return (

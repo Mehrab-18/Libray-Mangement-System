@@ -12,16 +12,13 @@ import Link from "next/link";
 const page = () => {
   const [worksCardData, setWorksCardData] = useState<any>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(9);
   const [totalRecords, setTotalRecords] = useState(0);
-
-  const workCardStyles = [
-    { originalBtnBgColor: "custom-offwhite", originalBtnColor: "black" },
-  ];
+  const pageSizeOptions = ["9", "18", "60"];
 
   useEffect(() => {
     getWorks();
-  }, [currentPage]);
+  }, [currentPage, pageSize]);
 
   const getWorks = async () => {
     const res: any = await getPaginatedWorks(currentPage, pageSize);
@@ -29,9 +26,12 @@ const page = () => {
     setTotalRecords(res?.data.meta.pagination.total);
   };
 
-  const handlePaginationChange = (current: any) => {
+  const handlePaginationChange = (current: any, size: any) => {
     setCurrentPage(current);
+    setPageSize(size);
   };
+
+  console.log("works", worksCardData);
 
   return (
     <Layout>
@@ -59,14 +59,17 @@ const page = () => {
                     key={index}
                   >
                     <WorkCard
-                      imageUrl={work.attributes.Titelbild.data.attributes.url}
-                      isOriginal={true}
-                      originalText={work.attributes.Art}
-                      description={work.attributes.Titel}
+                      imageUrl={
+                        work?.attributes?.Titelbild?.data?.attributes?.url
+                      }
+                      isHomePageCard={false}
+                      isType={true}
+                      typeText={work.attributes.Art}
+                      titleText={work.attributes.Titel}
                       footerText={work.attributes.Stil}
                       isfooterText={true}
-                      hasVolumes={false}
-                      noOfVolumes={work.noOfVolumes}
+                      hasVolumes={true}
+                      noOfVolumes={work.attributes.AnzahlBuecher}
                       cardStyles={[]}
                     />
                   </div>
@@ -82,6 +85,7 @@ const page = () => {
             current={currentPage}
             disabled={false}
             showSizeChanger
+            pageSizeOptions={pageSizeOptions}
             onChange={handlePaginationChange}
           />
         </div>

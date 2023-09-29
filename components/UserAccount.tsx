@@ -30,8 +30,7 @@ function UserAccount() {
   return (
     <>
       <NavBar />
-
-      <div className=" mx-4 lg:mx-0 mt-8 lg:mt-12 lg:ml-28 lg:mr-20">
+      <div className="lg:mx-24 lg:pl-36 mt-8 lg:mt-12">
         <Link href={"/libraries"}>
           <div className="text-sm text-red-400 flex flex-row items-center ">
             {" "}
@@ -42,13 +41,12 @@ function UserAccount() {
           Welcome to your library,
         </div>
         <div className="text-sm text-red-400 mt-5">Max Musterman</div>
-
-        <div className="flex flex-wrap gap-6">
-          <div className="flex-col w-[390px] lg:w-[295px] h-[270px] shadow-xl mt-5">
+        <div className="flex flex-wrap gap-6 ">
+          <div className="flex-col w-[390px] lg:w-[395px] h-[380px] shadow-xl mt-5">
             <div className="h-1/2 bg-gray-50 shadow-lg flex items-center justify-center">
               <Image src={logo} alt="image" height={70} width={70} />
             </div>
-            <div className="h-1/2">
+            <div className="h-1/2 ">
               <div>
                 <button className="ml-5 mt-5 text-xs bg-black px-1   rounded-xl text-white">
                   Premium
@@ -76,7 +74,7 @@ function UserAccount() {
               </div>
             </div>
           </div>
-          <div className="w-[390px] lg:w-[230px] h-[270px] border shadow-xl mt-5">
+          <div className="w-[390px] lg:w-[355px] h-[340px] border shadow-xl mt-5">
             <div className="ml-7 mt-6 text-sm font-bold">Collections</div>
             <div className="h-[1px] w-[170px] mx-7 my-4 bg-gray-200 shadow-md"></div>
             <div className="flex-col gap-4 mt-5 ml-7">
@@ -88,12 +86,12 @@ function UserAccount() {
               <div className="text-sm text-gray-400 ">Works</div>
             </div>
           </div>
-          <div className="w-[390px] lg:w-[230px] h-[270px] border shadow-xl mt-5">
+          <div className="w-[390px] lg:w-[355px] h-[340px] border shadow-xl mt-5">
             <div className="ml-7 mt-6 text-sm font-bold">Condition</div>
             <div className="h-[1px] w-[170px] mx-7 my-4 bg-gray-200 shadow-md"></div>
             <div className="text-sm text-gray-400 ml-7">100% Very good</div>
           </div>
-          <div className="w-[390px] lg:w-[230px] h-[270px] border shadow-xl mt-5">
+          <div className="w-[390px] lg:w-[355px] h-[340px] border shadow-xl mt-5">
             <div className="ml-7 mt-6 text-sm font-bold">Condition</div>
             <div className="h-[1px] w-[170px] mx-7 my-4 bg-gray-200 shadow-md"></div>
             <div className="text-lg text-black font-extrabold ml-7">
@@ -123,7 +121,7 @@ function UserAccount() {
               </button>
             </div>
           </div>
-          <div className="flex justify-between lg:flex-row lg:gap-10 lg:mr-16 ">
+          <div className="flex justify-between lg:flex-row lg:gap-10 lg:mr-36">
             <div className="text-sm font-semibold block lg:hidden">Filters</div>
             <div className="flex flex-row gap-3">
               <div className="flex flex-row items-center  text-sm font-semibold">
@@ -176,7 +174,7 @@ function UserAccount() {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-3 mt-9 lg:mt-20">
+        <div className="lg:mr-12 flex flex-wrap gap-3 mt-9 lg:mt-20">
           <UserCard />
           <UserCard />
           <UserCard />
@@ -188,7 +186,7 @@ function UserAccount() {
             <IoIosArrowBack /> Back
           </div>
         </Link>
-        <div className=" w-[340px] lg:w-full  h-[1px] bg-gray-300 my-4"></div>
+        <div className="w-[94%] lg:mr-12 h-[1px] bg-gray-300 my-4"></div>
 
         <div className="my-8 flex items-center justify-center">
           <Pagination

@@ -5,6 +5,7 @@ import { WorkCardProps } from "@/types";
 const WorkCard = ({
   imageUrl,
   isType,
+  isHomePageCard = true,
   typeBgColor = "#342923",
   typeColor = "#fff",
   typeText,
@@ -17,24 +18,38 @@ const WorkCard = ({
   noOfVolumes,
   footerMargin,
 }: any) => {
-  console.log("In workCard");
+  console.log("In workCard", imageUrl);
   // min-w-[400px] min-h-[440px] border flex flex-col items-center shadow-lg rounded-lg m-2 relative bg-[#F4F4F4]
   return (
     <div className="min-w-[400px] min-h-[440px] flex flex-col justify-between border shadow-lg rounded-lg m-2 overflow-hidden">
       <div className="w-full h-[55%] bg-[#F4F4F4] relative">
-        <Image
-          src={imageUrl}
-          alt="Card Image"
-          layout="fill"
-          objectFit="contain"
-        />
+        {isHomePageCard ? (
+          <Image
+            src={imageUrl}
+            alt="Card Image"
+            layout="fill"
+            objectFit="contain"
+          />
+        ) : (
+          <Image
+            src={imageUrl}
+            alt="Card Image"
+            width={350}
+            height={300}
+            objectFit="contain"
+          />
+        )}
       </div>
       <div className="pt-2 h-[45%] bg-white">
         <div className="flex flex-col h-full justify-between">
           <div className="flex justify-between px-2 items-center">
             {isType && (
               <button
-                className={`bg-custom-brown h-6 w-16 text-white text-center px-2 text-[12px] rounded-full `}
+                className={
+                  isHomePageCard
+                    ? `bg-custom-brown h-6 w-16 text-white text-center px-2 text-[12px] rounded-full `
+                    : `bg-custom-offwhite h-6 w-16 text-custom-brown font-semibold text-center px-2 text-[12px] rounded-full `
+                }
               >
                 {typeText}
               </button>

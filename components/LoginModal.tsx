@@ -3,7 +3,7 @@ import Modal from "@mui/material/Modal";
 import { Input, Form, notification } from "antd";
 import { LoginModal } from "@/types";
 import Box from "@mui/material/Box";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 import { ClipLoader } from "react-spinners";
 import {
   AiOutlineClose,
