@@ -1,99 +1,18 @@
 "use client";
-import { useState, ChangeEvent, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { BsDownload } from "react-icons/bs";
-// const BindingImage = require("@/public");
+import { IoIosArrowBack } from "react-icons/io";
+import { LuUpload } from "react-icons/lu";
 const emailIcon = require("@/public/icons/Email_Icon@2x.png");
 const phoneIcon = require("@/public/icons/phone Icon@2x.png");
 const locationIcon = require("@/public/icons/Location_Icon@2x.png");
 
 const BindingForm = () => {
-  const [name, setName] = useState<string>();
-  const [lastName, setLastName] = useState<string>();
-  const [birthday, setBirthday] = useState<string | number>();
-  const [phone, setPhone] = useState<string | number>();
-  const [email, setEmail] = useState<string | number>();
-  const [streetHouse, setStreetHouse] = useState<string | number>();
-  const [postal, setPostal] = useState<string | number>();
-  const [city, setCity] = useState<string>();
-  const [country, setCountry] = useState<string>();
-  const [works, setWorks] = useState<string>();
-  const [hear, setHear] = useState<string>();
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const formRef = useRef<any>(null); // Initialize with null
-
-  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-  const handleLastName = (e: ChangeEvent<HTMLInputElement>) => {
-    setLastName(e.target.value);
-  };
-  const handleBirthday = (e: ChangeEvent<HTMLInputElement>) => {
-    setBirthday(e.target.value);
-  };
-  const handlePhone = (e: ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
-  };
-  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-  const handleStreetHouse = (e: ChangeEvent<HTMLInputElement>) => {
-    setStreetHouse(e.target.value);
-  };
-  const handlePostal = (e: ChangeEvent<HTMLInputElement>) => {
-    setPostal(e.target.value);
-  };
-  const handleCity = (e: ChangeEvent<HTMLInputElement>) => {
-    setCity(e.target.value);
-  };
-  const handleCountry = (e: ChangeEvent<HTMLInputElement>) => {
-    setCountry(e.target.value);
-  };
-  const handleWorks = (e: ChangeEvent<HTMLInputElement>) => {
-    setWorks(e.target.value);
-  };
-  const handleHear = (e: ChangeEvent<HTMLInputElement>) => {
-    setHear(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    // Ensure formRef is not null
-    if (formRef.current) {
-      // Create FormData object directly from the form element
-      const formData = new FormData(formRef.current);
-
-      // Build the email body with line breaks
-      const emailBody = `
-  Name: ${formData.get("name")} ${formData.get("lastName")}
-  Birthday: ${formData.get("birthday")}
-  Phone: ${formData.get("phone")}
-  Email: ${formData.get("email")}
-  Street/House: ${formData.get("streetHouse")}
-  Postal: ${formData.get("postal")}
-  City: ${formData.get("city")}
-  Country: ${formData.get("country")}
-  Works: ${formData.get("works")}
-  Hear: ${formData.get("hear")}
-  `.trim(); // Remove leading/trailing white space
-
-      // URL encode the email body
-      const encodedEmailBody = encodeURIComponent(emailBody);
-
-      // Construct the mailto link
-      const mailtoLink = `mailto:recipient@example.com?subject=Form Submission&body=${encodedEmailBody}`;
-
-      // Open the email client
-      window.location.href = mailtoLink;
-
-      setFormSubmitted(true);
-    }
-  };
-
   return (
     <>
-      <div className="w-[90%] lg:flex lg:flex-row lg:justify-between border border-black-100">
+      <div className="w-full flex flex-row justify-center lg:justify-between ">
         <div
-          className="border border-black-100 image-container"
+          className="hidden lg:flex image-container"
           style={{ height: "1800px" }}
         >
           {/* <Image
@@ -103,227 +22,230 @@ const BindingForm = () => {
             height={1800}
           /> */}
         </div>
-        <div className="w-1/2 lg:mt-20 ">
-          <div className="text-3xl text-black font-bold mb-6">
-            Ask us for a non-binding offer.
+        <div className="mx-4 w-full lg:w-1/2">
+          <div className="mt-10 w-full lg:hidden ">
+            <Link
+              href={`/`}
+              className="flex items-center text-custom-mobile-orange"
+            >
+              <IoIosArrowBack /> Back
+            </Link>{" "}
           </div>
-          <div className="text-xs mb-12">
-            For a non-binding offer you can also contact our phone support. Our
-            team would love to discuss <br /> this with you.
+          <div className="headings">
+            <h1 className="mt-6 lg:mt-20 text-[25px] lg:text-[50px] font-semibold">
+              Ask us for a non-binding offer
+            </h1>
+            <h4 className="mt-4 lg:w-3/4 text-[#4B4B50] text[15px] lg:text-[16px]">
+              For a non-binding offer you can also contact our phone support.
+              Our team would love to discuss this with you.
+            </h4>
           </div>
-          <div className="text-sm text-black font-semibold">Customer Data</div>
-          <form ref={formRef}>
-            <div className="flex flex-row gap-5 mb-3">
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
-                  Firstname
+          <div className="customer-data">
+            <h2 className="text-[20px] font-semibold mt-12 mb-6">
+              Customer data
+            </h2>
+            <div className="flex flex-wrap justify-start gap-6">
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px]">
+                  Firstname*
                 </label>
                 <input
                   type="text"
                   required={true}
-                  value={name}
-                  onChange={handleName}
                   placeholder="Firstname"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
-                  Lastname
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
+                  Lastname*
                 </label>
                 <input
                   type="text"
                   required={true}
-                  value={lastName}
-                  onChange={handleLastName}
                   placeholder="Lastname"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
-            </div>
-            <div className="flex flex-row gap-5 mb-3">
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
+                  Phone*
+                </label>
+                <input
+                  type="text"
+                  required={true}
+                  placeholder="Phone"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
+                />
+              </div>
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
                   Birthday
                 </label>
                 <input
                   type="text"
-                  required={true}
-                  value={birthday}
-                  onChange={handleBirthday}
+                  required={false}
                   placeholder="Birthday"
-                  className="border-b border-gray-400  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
-                  Phone
+              <div className="w-[90%] lg:w-[83%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
+                  Email
                 </label>
                 <input
                   type="text"
-                  required={true}
-                  value={phone}
-                  onChange={handlePhone}
-                  placeholder="De (49) Phone"
-                  className="border-b border-gray-400  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  required={false}
+                  placeholder="Email"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
             </div>
-            <div className=" w-[580px] lg:mt-6">
-              <label className="block text-gray-700 text-xs font-bold mb-1">
-                Email
-              </label>
-              <input
-                type="text"
-                required={true}
-                value={email}
-                onChange={handleEmail}
-                placeholder="Email"
-                className="border-b border-black  focus:outline-none focus:border-blue-500 w-[580px] py-1"
-              />
-            </div>
-            <div className="text-sm text-black font-semibold mt-20">
-              Address
-            </div>
-            <div className="flex flex-row gap-5 mb-3">
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
-                  Street/ house number
+          </div>
+          <div className="address">
+            <h2 className="text-[20px] font-semibold my-6">Address</h2>
+            <div className="flex flex-wrap justify-start gap-6">
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
+                  Street/house number
                 </label>
                 <input
-                  type="address"
-                  required={true}
-                  value={streetHouse}
-                  onChange={handleStreetHouse}
-                  placeholder="Street/ house number"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  type="text"
+                  required={false}
+                  placeholder="Street/house number"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
-                  Postal
-                </label>
-                <input
-                  type="address"
-                  required={true}
-                  value={postal}
-                  onChange={handlePostal}
-                  placeholder="Postal"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row gap-5 mb-3">
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
                   City
                 </label>
                 <input
                   type="text"
-                  required={true}
-                  value={city}
-                  onChange={handleCity}
+                  required={false}
                   placeholder="City"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
-              <div className=" w-[280px] lg:mt-6">
-                <label className="block text-gray-700 text-xs font-bold mb-1">
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
+                  Postal
+                </label>
+                <input
+                  type="text"
+                  required={false}
+                  placeholder="Postal"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
+                />
+              </div>
+              <div className="w-[90%] lg:w-[40%] mb-4">
+                <label className="block text-[#4B4B50] text-[10px] ">
                   Country
                 </label>
                 <input
                   type="text"
-                  required={true}
-                  value={country}
-                  onChange={handleCountry}
+                  required={false}
                   placeholder="Country"
-                  className="border-b border-black  focus:outline-none focus:border-blue-500 w-[280px] py-1"
+                  className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
             </div>
-            <div className="text-sm text-black font-semibold mt-20">
+          </div>
+          <div className="additional-information ">
+            <h2 className="text-[20px] font-semibold my-6">
               Additional Information
-            </div>
-            <div className=" w-[580px] lg:mt-6">
-              <label className="block text-gray-700 text-xs font-bold mb-1">
+            </h2>
+            <div className="w-[90%] lg:w-[83%] mb-4">
+              <label className="block text-[#4B4B50] text-[10px] ">
                 How many works do you want to register?
               </label>
               <input
-                type="number"
-                required={true}
+                type="text"
+                required={false}
                 placeholder="Amount of works"
-                value={works}
-                onChange={handleWorks}
-                className="border-b border-black  focus:outline-none focus:border-blue-500 w-[580px] py-1"
+                className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
               />
             </div>
-            <div className=" w-[580px] lg:mt-6">
-              <label className="block text-gray-700 text-xs font-bold mb-1">
+            <div className="w-[90%] lg:w-[83%] mb-4">
+              <label className="block text-[#4B4B50] text-[10px] ">
                 How did you hear about us?
               </label>
               <input
-                type="How did you hear about us?"
-                required={true}
-                value={hear}
-                onChange={handleHear}
+                type="text"
+                required={false}
                 placeholder="How did you hear about us?"
-                className="border-b border-black  focus:outline-none focus:border-blue-500 w-[580px] py-1"
+                className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
               />
             </div>
-            <div className="text-sm text-black font-semibold mt-20">
-              Upload attatchment
+          </div>
+          <div className="doc-upload ">
+            <h2 className="text-[20px] font-semibold my-6">
+              Upload Attachment
+            </h2>
+            <div className="w-[90%] lg:w-1/2 mb-8 relative">
+              <input
+                type="file"
+                className="bg-white hover:bg-[#415479] hover:text-white text-[#415479] text-center text-[16px] font-semibold border border-[#415479] w-3/4 py-2 px-4 rounded-full cursor-pointer absolute opacity-0"
+              />
+              <span className="w-[60%] lg:w-1/2 h-12 flex gap-1 justify-center items-center px-4 py-2 text-center border border-[#415479] bg-white text-[#415479] transition duration-300 ease-in-out rounded-full relative z-10">
+                <LuUpload /> Submit
+              </span>
             </div>
-            <div className="mt-5">
-              <button className="flex flex-row items-center justify-center gap-2 px-10 text-xs py-3 border border-gray-500 rounded-3xl">
-                <BsDownload />
+            <div className="w-full lg:w-[60%] mb-4">
+              <div className="flex">
+                <label className="flex items-start cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="appearance-none border rounded-full border-custom-mobile-orange checked:appearance-auto checked:bg-custom-mobile-orange focus:outline-none w-[46px] h-[16px] lg:h-5 lg:w-8 mr-2"
+                  />
+                  <span className="text-gray-600 text-sm">
+                    Yes, I agree that my data will be processed in accordance
+                    with this data protection declaration for the purpose of
+                    establishing contact.
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="submit-btn">
+            <div className="mt-6 w-[90%] mb-8">
+              <button className="h-12 w-full lg:w-[60%] flex gap-1 justify-center items-center px-4 py-2 text-center border border-[#415479] bg-white text-[#415479] transition duration-300 ease-in-out rounded-full relative z-10">
                 Submit
               </button>
             </div>
-            <div className="mt-12">
-              <div className="py-3 flex items-center">
-                <input
-                  type="checkbox"
-                  className="appearance-none border rounded-full border-custom-mobile-orange checked:appearance-auto checked:bg-custom-mobile-orange  focus:outline-none w-5 h-5 mr-2"
-                />
-                <span className="text-gray-600 text-xs">
-                  Yes, I agree that my data will be processed in accordance with
-                  this data protection <br /> declaration for the purpose of
-                  establishing contact.
-                </span>
-              </div>
-              <div className="w-[580px] mt-8">
-                <button
-                  className="w-[580px] rounded-3xl h-[40px] text-sm border  border-gray-500"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </form>
-          <div className="text-gray-600 text-xs mt-10">
-            We are available for you 24/7. You can reach us at:
           </div>
-          <ul className=" flex flex-col mt-6">
-            <li className="flex items-center gap-2 my-2">
-              <Image src={phoneIcon} alt="phone" width={12} height={12} />
-              <h2 className="text-[12px] text-custom-brown font-semibold">
-                +49 (0)89 66 77 88 33
-              </h2>
-            </li>
-            <li className="flex items-center gap-2 my-2">
-              <Image src={emailIcon} alt="email" width={17} height={17} />
-              <h2 className="text-[12px] text-custom-brown font-semibold">
-                info@kollektiv-archiv.de
-              </h2>
-            </li>
-            <li className="flex items-center gap-2 my-2">
-              <Image src={locationIcon} width={15} height={15} alt="location" />
-              <h2 className="text-[12px] text-custom-brown font-semibold">
-                Tölzer Straße 1, 82031 Grünwald, Germany
-              </h2>
-            </li>
-          </ul>
+          <div className="contact-info">
+            <div className="w-[90%] mb-16">
+              <h3 className="mb-6 text-[16px] text-[16px]">
+                We are available for you 24/7. You can reach us at:
+              </h3>
+              <ul className="h-full gap-4 justify-evenly flex flex-col">
+                <li className="flex items-center gap-2 my-2">
+                  <Image src={phoneIcon} alt="phone" width={15} height={25} />
+                  <h2 className="text-[20px] font-semibold">
+                    +49 (0)89 66 77 88 33
+                  </h2>
+                </li>
+                <li className="flex items-center gap-2 my-2">
+                  <Image src={emailIcon} alt="email" width={15} height={25} />
+                  <h2 className="text-[20px] font-semibold">
+                    info@kollektiv-archiv.de
+                  </h2>
+                </li>
+                <li className="flex items-center gap-2 my-2">
+                  <Image
+                    src={locationIcon}
+                    width={15}
+                    height={25}
+                    alt="location"
+                  />
+                  <h2 className="text-[20px] font-semibold">
+                    Tölzer Straße 1, 82031 Grünwald, Germany
+                  </h2>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>

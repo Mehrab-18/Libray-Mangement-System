@@ -48,7 +48,7 @@ function page() {
   return (
     <>
       <NavBar />
-      {/* <BindingForm /> */}
+      <BindingForm />
       <div className="hidden lg:flex py-8 px-8 w-full fixed bottom-0 justify-between bg-custom-gray">
         <div className="w-1/4 text-white text-[16px] font-semibold">
           kollektiv archiv GmbH © 2023 All rights reserved
