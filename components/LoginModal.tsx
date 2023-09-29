@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useForm } from "antd/es/form/Form";
 import { loginApi } from "@/api/works";
+import Link from "next/link";
 
 const LoginModal = ({ modal, setModal }: LoginModal) => {
   const [form] = Form.useForm();
@@ -213,9 +214,12 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
                     Contact us!
                   </Typography>
                 </div>
-                <button className="rounded-full bg-white text-black w-[35%] h-10 p-2">
+                <Link
+                  href="/binding_form"
+                  className="rounded-full text-center bg-white text-black w-[35%] h-10 p-2"
+                >
                   Contact
-                </button>
+                </Link>
               </div>
             </div>
           </Box>
