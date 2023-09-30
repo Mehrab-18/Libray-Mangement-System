@@ -2,11 +2,7 @@
 import React, { ReactNode } from "react";
 import { NavBar } from ".";
 import CustomLink from "./CustomLink";
-import Image from "next/image";
 import Link from "next/link";
-const emailIcon = require("@/public/icons/Email_Icon@2x.png");
-const phoneIcon = require("@/public/icons/phone Icon@2x.png");
-const locationIcon = require("@/public/icons/Location_Icon@2x.png");
 
 interface LayoutProps {
   children: ReactNode;
