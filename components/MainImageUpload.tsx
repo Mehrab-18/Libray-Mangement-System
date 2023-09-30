@@ -31,7 +31,7 @@ const MainImageUpload = ({ setState, state }: Props) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: "image/*", // Accept any image file (e.g., jpg, png, gif)
     maxFiles: 1,
   });
 
