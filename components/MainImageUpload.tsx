@@ -127,7 +127,7 @@ const MainImageUpload = ({ setState, state }: Props) => {
           className="flex flex-col justify-center items-center h-fit"
         >
           <input {...getInputProps()} />
-          <Image src={ImageUpload} />
+          <Image src={ImageUpload} alt={'StateImage'} />
         </div>
       )}
     </div>
