@@ -203,7 +203,7 @@ const page = () => {
             <span className="font-semibold">Filters:</span>
           </div>
           <div className="sort-section">
-            <div className="lg:flex text-black pl-6 font-semibold w-full items-center gap-4">
+            <div className="flex text-black pl-6 font-semibold w-full items-baseline gap-2">
               <span>Order by:</span>
               <FormControl>
                 <NativeSelect defaultValue={"type"}>
