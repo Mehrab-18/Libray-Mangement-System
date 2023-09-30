@@ -254,4 +254,12 @@
   color:#4B4B50;
   font-size:16px;
 }
+.MuiNativeSelect-select {
+  border: none;
+  outline: none;
+  /* Add any other custom styling you want here */
+}
+.MuiNativeSelect-icon {
+  color: #c25b3c;
+  }
 /* END: search manufacturer styles */

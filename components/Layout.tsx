@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="">
       <NavBar />
       <main>{children}</main>
-      <div className="hidden lg:flex py-8 px-8 w-full fixed bottom-0 justify-between bg-custom-gray">
+      <div className="hidden lg:flex py-8 px-8 w-full justify-between bg-custom-gray">
         <div className="w-1/4 text-white text-[16px] font-semibold">
           kollektiv archiv GmbH © 2023 All rights reserved
         </div>
