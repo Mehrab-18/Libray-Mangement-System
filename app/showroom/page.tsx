@@ -1,5 +1,4 @@
 "use client";
-import CardContainer from "@/components/CardContainer";
 import Layout from "@/components/Layout";
 import LibraryCard from "@/components/LibraryCard";
 import React, { useEffect, useState } from "react";
@@ -9,21 +8,17 @@ import { SearchBar } from "@/components";
 import WorkCard from "@/components/WorkCard";
 import { Pagination } from "antd";
 import { FormControl, NativeSelect } from "@mui/material";
-const book8 =
-  require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
-const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;
-const book10 = require("@/public/images/IMG_4251_copy_bb12520a0a.png").default;
-const book11 = require("@/public/images/IMG_6477_copy_34d0993ee2.png").default;
 
 const page = () => {
   const [showRoomsData, setShowroomsData] = useState<any>();
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(9);
   const [totalRecords, setTotalRecords] = useState(0);
+  const pageSizeOptions = ["9", "18", "60"];
 
   useEffect(() => {
     getShowrooms();
-  }, []);
+  }, [currentPage, pageSize]);
 
   const getShowrooms = async () => {
     const res = await getAllShowrooms();
@@ -62,8 +57,9 @@ const page = () => {
     }
   };
 
-  const handlePaginationChange = (current: any) => {
+  const handlePaginationChange = (current: any, size: any) => {
     setCurrentPage(current);
+    setPageSize(size);
   };
 
   return (
@@ -135,6 +131,8 @@ const page = () => {
             current={currentPage}
             disabled={false}
             showSizeChanger
+            defaultPageSize={9}
+            pageSizeOptions={pageSizeOptions}
             onChange={handlePaginationChange}
           />
         </div>
