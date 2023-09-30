@@ -16,13 +16,10 @@ const WorkCard = ({
   footerText2,
   hasVolumes,
   noOfVolumes,
-  footerMargin,
 }: any) => {
-  console.log("In workCard", imageUrl);
-  // min-w-[400px] min-h-[440px] border flex flex-col items-center shadow-lg rounded-lg m-2 relative bg-[#F4F4F4]
   return (
-    <div className="min-w-[400px] min-h-[440px] flex flex-col justify-between border shadow-lg rounded-lg m-2 overflow-hidden">
-      <div className="w-full h-[55%] bg-[#F4F4F4] relative">
+    <div className="min-w-[350px] lg:min-w-[400px] min-h-[477px] flex flex-col justify-between border shadow-lg rounded-lg m-2 overflow-hidden">
+      <div className="w-full bg-[#F4F4F4] relative">
         {isHomePageCard ? (
           <Image
             src={imageUrl}
@@ -31,12 +28,12 @@ const WorkCard = ({
             objectFit="contain"
           />
         ) : (
-          <Image
+          <img
             src={imageUrl}
             alt="Card Image"
             width={350}
             height={300}
-            objectFit="contain"
+            style={{ objectFit: "contain", height: "100%" }}
           />
         )}
       </div>

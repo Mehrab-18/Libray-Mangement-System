@@ -3,26 +3,15 @@ import React, { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
-import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
 import LibraryCard from "@/components/LibraryCard";
 import WorkCard from "@/components/WorkCard";
-import { Pagination } from "antd";
-import CardContainer from "@/components/CardContainer";
 import { getSingleLibrary } from "@/api/libraries";
-const book8 =
-  require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
-const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;
-const book10 = require("@/public/images/IMG_4251_copy_bb12520a0a.png").default;
-const book11 = require("@/public/images/IMG_6477_copy_34d0993ee2.png").default;
 
 const page = () => {
   const [libraryData, setLibraryData] = useState<any>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
-  const [totalRecords, setTotalRecords] = useState(0);
 
   useEffect(() => {
     getLibraryData();
@@ -32,163 +21,6 @@ const page = () => {
     const res = await getSingleLibrary(7);
     setLibraryData(res?.data);
   };
-
-  useEffect(() => {
-    console.log("lib data", libraryData);
-  }, [libraryData]);
-
-  const library = {
-    id: 1,
-    libraryNumber: "2023 9876 5432",
-    works: 8,
-    dateofAddition: "22.09.2023",
-  };
-
-  const workCard = [
-    {
-      id: 1,
-      imageUrl: book8,
-      isOriginal: true,
-      originalText: "Facismile",
-      description: "Das bis",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 2,
-      imageUrl: book9,
-      isOriginal: true,
-      originalText: "Facismile",
-      isFooterText: true,
-      description: "Unser Jahrhundert ",
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 3,
-      imageUrl: book10,
-      isOriginal: true,
-      originalText: "Facismile",
-      isFooterText: true,
-      description: "Aratea Vaticana",
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: true,
-      noOfVolumes: "3",
-    },
-    {
-      id: 4,
-      imageUrl: book11,
-      isOriginal: true,
-      originalText: "Facismile",
-      isFooterText: true,
-      description: "Alexander Magnus",
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 5,
-      imageUrl: book8,
-      isOriginal: true,
-      description: "DasTon",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 6,
-      imageUrl: book10,
-      isOriginal: true,
-      description: "Aratea Vaticana",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: true,
-      noOfVolumes: "3",
-    },
-    {
-      id: 7,
-      imageUrl: book11,
-      isOriginal: true,
-      description: "Alexander Magnus",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 8,
-      imageUrl: book10,
-      isOriginal: true,
-      description: "Aratea Vaticana",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: true,
-      noOfVolumes: "3",
-    },
-    {
-      id: 9,
-      imageUrl: book11,
-      isOriginal: true,
-      description: "Alexander Magnus",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-    {
-      id: 10,
-      imageUrl: book10,
-      isOriginal: true,
-      description: "Aratea Vaticana",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: true,
-      noOfVolumes: "3",
-    },
-    {
-      id: 11,
-      imageUrl: book11,
-      isOriginal: true,
-      description: "Alexander Magnus",
-      originalText: "Facismile",
-      isFooterText: true,
-      footerText: "Astronomie:2022",
-      isFooterText2: true,
-      footerText2: "Condition:very good",
-      hasVolumes: false,
-      noOfVolumes: "3",
-    },
-  ];
 
   const workCardStyles = [
     { originalBtnBgColor: "custom-offwhite", originalBtnColor: "black" },
