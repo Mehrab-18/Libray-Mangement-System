@@ -33,7 +33,18 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 }) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: {
+      "image/png": [".png"],
+      "text/html": [".html", ".htm"],
+      "image/jpeg": [".jpg", ".jpeg"],
+      "image/gif": [".gif"],
+      "image/svg+xml": [".svg"],
+      "application/pdf": [".pdf"],
+      "application/msword": [".doc", ".docx"],
+      "application/vnd.ms-excel": [".xls", ".xlsx"],
+      "text/plain": [".txt"],
+      // Add more file types and extensions as needed
+    },
   });
 
   return (

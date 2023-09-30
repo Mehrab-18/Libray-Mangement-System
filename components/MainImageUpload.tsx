@@ -31,7 +31,18 @@ const MainImageUpload = ({ setState, state }: Props) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: "image/*", // Accept any image file (e.g., jpg, png, gif)
+    accept: {
+      "image/png": [".png"],
+      "text/html": [".html", ".htm"],
+      "image/jpeg": [".jpg", ".jpeg"],
+      "image/gif": [".gif"],
+      "image/svg+xml": [".svg"],
+      "application/pdf": [".pdf"],
+      "application/msword": [".doc", ".docx"],
+      "application/vnd.ms-excel": [".xls", ".xlsx"],
+      "text/plain": [".txt"],
+      // Add more file types and extensions as needed
+    },
   });
 
   const handleEditClick = () => {
