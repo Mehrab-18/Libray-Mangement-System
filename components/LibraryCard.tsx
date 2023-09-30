@@ -16,17 +16,18 @@ const LibraryCard = ({
   btn2Text,
   isRecommended,
 }: any) => {
-  console.log("color", conditionColor);
   return (
     <div className="min-w-[300px] min-h-[340px] p-4 border shadow-lg rounded-lg m-2m flex flex-col justify-between">
-      <div className="h-3/4 lg:flex lg:flex-col lg:justify-between ">
+      <div className="min-h-[180px] flex flex-col justify-between">
         <div className="flex justify-between">
-          <button
-            style={{ backgroundColor: conditionColor }}
-            className={`w-[30%] rounded-full text-white text-[12px] py-2 px-4`}
-          >
-            {condition}
-          </button>
+          {condition !== null && (
+            <button
+              style={{ backgroundColor: conditionColor }}
+              className={`w-[30%] rounded-full text-white text-[12px] py-2 px-4`}
+            >
+              {condition}
+            </button>
+          )}
           {isRecommended && (
             <button className="w-[50%] flex items-baseline gap-2 bg-custom-mobile-orange text-white text-[12px] py-2 px-4 rounded-lg">
               <span className="flex items-baseline gap-2">
@@ -54,7 +55,7 @@ const LibraryCard = ({
         <div className="flex justify-center">
           <Link
             href={`/libraries/${id}`}
-            className="bg-white hover:bg-custom-mobile-orange hover:text-white text-black text-center text-[16px] font-semibold border border-custom-mobile-orange w-3/4 py-2 px-4 rounded-full"
+            className="bg-white hover:bg-custom-mobile-orange hover:text-white text-black text-center text-[16px] font-semibold border border-[#415479] lg:border-custom-mobile-orange w-3/4 py-2 px-4 rounded-full"
           >
             {btn1Text}
           </Link>
@@ -64,7 +65,7 @@ const LibraryCard = ({
         <div className="flex justify-center">
           <Link
             href={`/libraries/${id}`}
-            className="bg-white text-black text-center text-[16px] font-semibold border border-custom-mobile-orange w-3/4 py-2 px-4 rounded-full"
+            className="bg-white text-black text-center text-[16px] font-semibold border border-[#415479] lg:border-custom-mobile-orange w-3/4 py-2 px-4 rounded-full"
           >
             {btn2Text}
           </Link>

@@ -8,6 +8,7 @@ import RadioButtons from "@/components/RadioButtons";
 import { SearchBar } from "@/components";
 import WorkCard from "@/components/WorkCard";
 import { Pagination } from "antd";
+import { FormControl, NativeSelect } from "@mui/material";
 const book8 =
   require("@/public/images/Foto_25_08_22_12_33_53_copy_6abed8bc8b.png").default;
 const book9 = require("@/public/images/IMG_2758_copy_ac71ac5550.png").default;
@@ -74,6 +75,22 @@ const page = () => {
           </div>
           <div>
             <SearchBar placeholder="Search" />
+          </div>
+        </div>
+        <div className="options-section mt-10 px-4 lg:px-0 lg:mt-0 w-full lg:w-[80%] flex items-center justify-end">
+          <div className="sort-section">
+            <div className="flex text-black pl-6 font-semibold w-full items-baseline gap-2">
+              <span>Order by:</span>
+              <FormControl>
+                <NativeSelect defaultValue={"type"}>
+                  <option value={"type"}>Type</option>
+                  <option value={"new"}>Newest</option>
+                  <option value={"old"}>Oldest</option>
+                  <option value={"asc"}>A-Z</option>
+                  <option value={"desc"}>Z-A</option>
+                </NativeSelect>
+              </FormControl>
+            </div>{" "}
           </div>
         </div>
         <div className="hidden lg:block h-[1px]  w-[1100px] my-10 bg-gray-200"></div>
