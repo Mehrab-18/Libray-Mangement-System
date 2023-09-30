@@ -4,19 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const RadioButtons = () => {
-  const initialActiveButtonIndex =
-    typeof window !== "undefined"
-      ? localStorage.getItem("activeButtonIndex")
-      : null;
+  const [path, setPath] = useState<any>();
 
-  const [activeButton, setActiveButton] = useState(initialActiveButtonIndex);
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    setPath(currentPath);
+  }, []);
 
-  const handleButtonClick = (index: any) => {
-    setActiveButton(index);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("activeButtonIndex", index);
-    }
-  };
   const buttons = [
     { text: "Works", linkTo: "/works" },
     { text: "Libraries", linkTo: "/libraries" },
@@ -34,11 +28,10 @@ const RadioButtons = () => {
         <Link
           key={index}
           className={`px-4 py-1 rounded-full cursor-pointer ${
-            activeButton === index.toString()
+            path === button.linkTo
               ? "bg-custom-radio-orange text-white shadow-lg"
               : " text-custom-gray"
           } `}
-          onClick={() => handleButtonClick(index)}
           href={button.linkTo}
         >
           {button.text}
