@@ -1,24 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LoginModal from "./LoginModal";
-import ScamsModal from "./ScamsModal";
-import MessageModal from "./MessageModal";
 const logo = require("@/public/images/LOGO 2_2.svg");
 import { FiMenu, FiX } from "react-icons/fi"; // Example icons (you can use any icon from the library)
 import { NavLinkProps } from "@/types";
 import { CustomButton } from ".";
 import { FaRegUser } from "react-icons/fa";
 import CustomLink from "./CustomLink";
-import ContactModal from "./ContactModal";
 const callIcon = require("@/public/icons/Contact Us_Button_Header.svg");
 const worldIcon = require("@/public/icons/World_Icon.svg");
 
 function MobileNavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [path, setPath] = useState<any>();
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    setPath(currentPath);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,26 +31,30 @@ function MobileNavBar() {
     setIsLoginModalOpen(!isLoginModalOpen);
   };
 
-  const publicLinks: NavLinkProps[] = [
+  const publicLinks: any = [
     {
       url: "/works",
       title: "Works",
       customStyles: `${isOpen ? "text-white" : "text-black"}`,
+      isActive: false,
     },
     {
       url: "/about",
       title: "About Us",
       customStyles: `${isOpen ? "text-white" : "text-black"}`,
+      isActive: false,
     },
     {
       url: "/mission",
       title: "Our Mission",
       customStyles: `${isOpen ? "text-white" : "text-black"}`,
+      isActive: false,
     },
     {
       url: "/showroom",
       title: "Showroom",
       customStyles: `${isOpen ? "text-white" : "text-black"}`,
+      isActive: false,
     },
   ];
 
@@ -68,10 +75,18 @@ function MobileNavBar() {
           </div>
           <div className="hidden lg:block w-[40%]">
             <ul className="flex justify-center space-x-6">
-              {publicLinks.map((link, index) => (
+              {publicLinks.map((link: any, index: number) => (
                 <li key={index}>
                   <Link href={link.url} className={link.customStyles}>
-                    {link.title}
+                    <span
+                      className={
+                        path === link.url
+                          ? `font-semibold text-[#c25b3c]`
+                          : `hover:text-[#c25b3c] hover:font-semibold`
+                      }
+                    >
+                      {link.title}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -115,7 +130,7 @@ function MobileNavBar() {
       {isOpen && (
         <div className="bg-custom-mobile-orange w-screen h-screen flex flex-col justify-around items-center">
           <ul className="h-1/3 flex flex-col justify-evenly items-center space-x-6">
-            {publicLinks.map((link, index) => (
+            {publicLinks.map((link: any, index: number) => (
               <li key={index}>
                 <CustomLink
                   url={link.url}
