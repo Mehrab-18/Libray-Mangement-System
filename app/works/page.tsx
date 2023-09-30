@@ -394,6 +394,7 @@ const page = () => {
             current={currentPage}
             disabled={false}
             showSizeChanger
+            defaultPageSize={9}
             pageSizeOptions={pageSizeOptions}
             onChange={handlePaginationChange}
           />

@@ -11,19 +11,18 @@ import { FormControl, NativeSelect } from "@mui/material";
 
 const page = () => {
   const [librariesData, setLibrariesData] = useState<any>();
-  const [libraryWorks, setLibraryWorks] = useState<any>();
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(9);
   const [totalRecords, setTotalRecords] = useState(0);
+  const pageSizeOptions = ["9", "18", "60"];
 
   useEffect(() => {
     getLibraries();
-  }, []);
+  }, [currentPage, pageSize]);
 
   const getLibraries = async () => {
     const res = await getAllLibraries(currentPage, pageSize);
     setLibrariesData(res?.data.data);
-    setLibraryWorks(res?.data.data.besitzes);
     setTotalRecords(res?.data.meta.total);
   };
 
@@ -33,8 +32,9 @@ const page = () => {
     }
   };
 
-  const handlePaginationChange = (current: any) => {
+  const handlePaginationChange = (current: any, size: any) => {
     setCurrentPage(current);
+    setPageSize(size);
   };
 
   function formatDateToDDYYYYMM(dateString: string) {
@@ -118,6 +118,8 @@ const page = () => {
             current={currentPage}
             disabled={false}
             showSizeChanger
+            defaultPageSize={9}
+            pageSizeOptions={pageSizeOptions}
             onChange={handlePaginationChange}
           />
         </div>
