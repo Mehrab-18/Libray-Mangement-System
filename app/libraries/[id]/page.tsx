@@ -56,7 +56,16 @@ const page = () => {
           <div className="hidden lg:flex text-black pl-6 font-semibold w-3/4 items-baseline gap-2">
             Order by:
             <FormControl>
-              <NativeSelect defaultValue={"type"}>
+              <NativeSelect
+                defaultValue={"type"}
+                sx={{
+                  boxShadow: "none",
+                  "& .css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input.css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input.css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input":
+                    { paddingRight: "14px" },
+                }}
+                disableUnderline
+              >
+                {" "}
                 <option value={"type"}>Type</option>
                 <option value={"new"}>Newest</option>
                 <option value={"old"}>Oldest</option>
