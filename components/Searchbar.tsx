@@ -11,15 +11,15 @@ const Search = ({ placeholder }: SearchbarProps) => {
   };
 
   return (
-    <div className="w-full relative shadow-sm ">
-      <div className="flex items-center h-[60px] bg-white  border border-gray-300 rounded-full overflow-hidden">
-        <div className="px-3 py-2 bg-white">
+    <div className="w-full relative ">
+      <div className="flex items-center h-[44px]  shadow-xl  border-none bg-[#F4F4F4] rounded-full overflow-hidden">
+        <div className="px-3 py-2 bg-[#F4F4F4] ">
           <FiSearch style={{ color: "#f97316", fontSize: "34px" }} />
         </div>
         <input
           type="text"
           placeholder={placeholder}
-          className="w-full px-4 py-2 outline-none focus:outline-none"
+          className="w-full px-4 py-2 outline-none bg-[#F4F4F4] focus:outline-none"
           value={searchTerm}
           onChange={handleSearch}
         />

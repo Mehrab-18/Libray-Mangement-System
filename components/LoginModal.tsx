@@ -17,7 +17,6 @@ import Typography from "@mui/material/Typography";
 import { useForm } from "antd/es/form/Form";
 import { loginApi } from "@/api/works";
 import Link from "next/link";
-import ForgetModal from "./ForgetModal";
 
 const LoginModal = ({ modal, setModal }: LoginModal) => {
   const [form] = Form.useForm();
