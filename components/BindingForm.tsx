@@ -3,11 +3,55 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowBack } from "react-icons/io";
 import { LuUpload } from "react-icons/lu";
+import { useState } from "react";
 const emailIcon = require("@/public/icons/Email_Icon@2x.png");
 const phoneIcon = require("@/public/icons/phone Icon@2x.png");
 const locationIcon = require("@/public/icons/Location_Icon@2x.png");
 
 const BindingForm = () => {
+  const [bindingFormMailLoad, setBindingFormMailLoad] = useState<any>({
+    firstname: "",
+    lastname: "",
+    phone: "",
+    birthday: "",
+    email: "",
+    houseNumber: "",
+    city: "",
+    postal: "",
+    country: "",
+    works: "",
+    marketing: "",
+  });
+
+  const handleFormPayload = (name: any, value: any) => {
+    setBindingFormMailLoad({ ...bindingFormMailLoad, [name]: value });
+  };
+
+  function handleSubmit() {
+    const emailBody = `
+    First Name: ${bindingFormMailLoad.firstname}
+    Last Name: ${bindingFormMailLoad.lastname}
+    Phone: ${bindingFormMailLoad.phone}
+    Birthday: ${bindingFormMailLoad.birthday}
+    Email: ${bindingFormMailLoad.email}
+    House Number: ${bindingFormMailLoad.houseNumber}
+    City: ${bindingFormMailLoad.city}
+    Postal: ${bindingFormMailLoad.postal}
+    Country: ${bindingFormMailLoad.country}
+    Works: ${bindingFormMailLoad.works}
+    How did you hear about us: ${bindingFormMailLoad.marketing}
+  `;
+
+    // Encode the email body for the mailto link
+    const encodedEmailBody = encodeURIComponent(emailBody);
+
+    // Create the mailto link
+    const mailtoLink = `mailto:your@email.com?subject=New Book Data&body=${encodedEmailBody}`;
+
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  }
+
   return (
     <>
       <div className="w-full flex flex-row justify-center lg:justify-between ">
@@ -53,6 +97,9 @@ const BindingForm = () => {
                   type="text"
                   required={true}
                   placeholder="Firstname"
+                  onChange={(e) =>
+                    handleFormPayload("firstname", e.target.value)
+                  }
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -64,6 +111,9 @@ const BindingForm = () => {
                   type="text"
                   required={true}
                   placeholder="Lastname"
+                  onChange={(e) =>
+                    handleFormPayload("firstname", e.target.value)
+                  }
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -75,6 +125,7 @@ const BindingForm = () => {
                   type="text"
                   required={true}
                   placeholder="Phone"
+                  onChange={(e) => handleFormPayload("phone", e.target.value)}
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -86,6 +137,9 @@ const BindingForm = () => {
                   type="text"
                   required={false}
                   placeholder="Birthday"
+                  onChange={(e) =>
+                    handleFormPayload("birthday", e.target.value)
+                  }
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -96,6 +150,7 @@ const BindingForm = () => {
                 <input
                   type="text"
                   required={false}
+                  onChange={(e) => handleFormPayload("email", e.target.value)}
                   placeholder="Email"
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
@@ -112,6 +167,9 @@ const BindingForm = () => {
                 <input
                   type="text"
                   required={false}
+                  onChange={(e) =>
+                    handleFormPayload("houseNumber", e.target.value)
+                  }
                   placeholder="Street/house number"
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
@@ -123,6 +181,7 @@ const BindingForm = () => {
                 <input
                   type="text"
                   required={false}
+                  onChange={(e) => handleFormPayload("city", e.target.value)}
                   placeholder="City"
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
@@ -135,6 +194,7 @@ const BindingForm = () => {
                   type="text"
                   required={false}
                   placeholder="Postal"
+                  onChange={(e) => handleFormPayload("postal", e.target.value)}
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -146,6 +206,7 @@ const BindingForm = () => {
                   type="text"
                   required={false}
                   placeholder="Country"
+                  onChange={(e) => handleFormPayload("country", e.target.value)}
                   className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                 />
               </div>
@@ -163,6 +224,7 @@ const BindingForm = () => {
                 type="text"
                 required={false}
                 placeholder="Amount of works"
+                onChange={(e) => handleFormPayload("works", e.target.value)}
                 className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
               />
             </div>
@@ -173,6 +235,7 @@ const BindingForm = () => {
               <input
                 type="text"
                 required={false}
+                onChange={(e) => handleFormPayload("marketing", e.target.value)}
                 placeholder="How did you hear about us?"
                 className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
               />

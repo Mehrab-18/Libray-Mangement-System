@@ -80,34 +80,6 @@ function AddWork() {
   };
 
   function handleSubmit() {
-    console.log("Submitting Form");
-    console.log("sellingPrice:", sellingPrice);
-    console.log("purchasePrice:", purchasePrice);
-    console.log("bookTitle:", bookTitle);
-    console.log("infos:", infos);
-    console.log("remarks:", remarks);
-    console.log("selectedImportWork:", selectedImportWork);
-    console.log("selectedConditionOption:", selectedConditionOption);
-    console.log("purchaseDate:", purchaseDate);
-    console.log("isOnRequest:", isOnRequest);
-    console.log("showBook:", showBook);
-    console.log("showPurchaseYear:", showPurchaseYear);
-    console.log("showCondition:", showCondition);
-    console.log("selectedOptionTypes:", selectedOptionTypes);
-    console.log("selectedOptionGenere:", selectedOptionGenere);
-    console.log("selectedOptionStyle:", selectedOptionStyle);
-    console.log("selectedOptionYear:", selectedOptionYear);
-    console.log("selectedCountry:", selectedCountry);
-    console.log("selectedVolumes:", selectedVolumes);
-    console.log("selectedTotalPages:", selectedTotalPages);
-    console.log("selectedLanguage:", selectedLanguage);
-    console.log("selectedCentury:", selectedCentury);
-    console.log("selectedAuthor:", selectedAuthor);
-    console.log("photos:", photos);
-    console.log("statePhoto.selectedImage:", statePhoto.selectedImage);
-    console.log("statePhoto.imageName:", statePhoto.imageName);
-
-    // You can add additional logic for form submission here
     const photoNames = photos.map((photo) => photo.name);
     const photoUrls = photos.map((photo) => photo.url);
 
@@ -151,8 +123,6 @@ function AddWork() {
   }
 
   function handleDiscard() {
-    console.log("Discarding Changes");
-
     // Reset all state variables to their initial values
     setSellingPrice("");
     setPurchasePrice("");
@@ -181,8 +151,6 @@ function AddWork() {
       selectedImage: null,
       imageName: "",
     });
-
-    // You can add additional logic if needed
   }
 
   return (
