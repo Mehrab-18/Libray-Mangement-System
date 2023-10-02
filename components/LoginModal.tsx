@@ -12,9 +12,7 @@ import {
 } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
 
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useForm } from "antd/es/form/Form";
 import { loginApi } from "@/api/works";
 import Link from "next/link";
 
@@ -27,10 +25,38 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
   const [inputType, setInputType] = useState("password");
   const [loader, setLoader] = useState(false);
   const [loginPayload, setLoginPayload] = useState<any>();
+  const [forgotPasswordPayload, setForgotPasswordPayload] = useState<any>({
+    libraryNum: 0,
+    name: "",
+    phone: "",
+  });
 
   const handleModalCancel = () => {
     setModal(false);
   };
+
+  const handleForgotModalPayload = (name: any, value: any) => {
+    setForgotPasswordPayload({ ...forgotPasswordPayload, [name]: value });
+  };
+
+  function handleForgotSubmit() {
+    console.log("forgot payload", forgotPasswordPayload);
+    const emailBody = `
+    Library Number: ${forgotPasswordPayload.libraryNum}
+    Name: ${forgotPasswordPayload.name}
+    Phone Number: ${forgotPasswordPayload.phone}
+    
+  `;
+    console.log("emailBody", emailBody);
+    // Encode the email body for the mailto link
+    const encodedEmailBody = encodeURIComponent(emailBody);
+
+    // Create the mailto link
+    const mailtoLink = `mailto:your@email.com?subject=New Book Data&body=${encodedEmailBody}`;
+
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  }
 
   const handleInputChange = (name: any, value: any) => {
     setLoginPayload({ ...loginPayload, [name]: value });
@@ -284,6 +310,12 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
                           <input
                             type="text"
                             required={true}
+                            onChange={(val) =>
+                              handleForgotModalPayload(
+                                "libraryNum",
+                                val.target.value
+                              )
+                            }
                             placeholder="12 digit library number"
                             className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                           />
@@ -296,6 +328,9 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
                             type="text"
                             required={true}
                             placeholder="Name"
+                            onChange={(val) =>
+                              handleForgotModalPayload("name", val.target.value)
+                            }
                             className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                           />
                         </div>
@@ -307,6 +342,12 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
                             type="text"
                             required={true}
                             placeholder="Phone"
+                            onChange={(val) =>
+                              handleForgotModalPayload(
+                                "phone",
+                                val.target.value
+                              )
+                            }
                             className="border-b border-black bg-white focus:outline-none focus:border-blue-500 w-full py-2"
                           />
                         </div>
@@ -325,7 +366,10 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
                           </div>
                         </div>
                       </div>
-                      <button className="rounded-full bg-custom-mobile-orange text-white w-full lg:w-3/4 h-8 lg:h-10">
+                      <button
+                        onClick={handleForgotSubmit}
+                        className="rounded-full bg-custom-mobile-orange text-white w-full lg:w-3/4 h-8 lg:h-10"
+                      >
                         Submit
                       </button>
                     </div>
