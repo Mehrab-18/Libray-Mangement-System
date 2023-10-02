@@ -14,12 +14,15 @@ import LibraryCardLibPage from "@/components/LibraryCardLibPage";
 const page = () => {
   const [workData, setWorkData] = useState<any>(null);
   const [id, setId] = useState<string | null>();
+  const [libraryId, setLibraryId] = useState("");
 
   useEffect(() => {
     const currentURL = window.location.href;
     const url = new URL(currentURL);
     const id = url.searchParams.get("id");
+    const libId = url.searchParams.get("libraryId");
     console.log(id);
+    setLibraryId(libId);
     setId(id);
   }, []);
 
@@ -75,18 +78,35 @@ const page = () => {
   return (
     <Layout>
       <div className="2xl:px-[14rem]">
-        <div className="w-full lg:w-3/4 flex justify-center ml-0 lg:ml-4 2xl:ml-1 lg:justify-start mt-5 ">
+        {/* <div className="w-full lg:w-3/4 flex justify-center ml-0 lg:ml-4 2xl:ml-1 lg:justify-start mt-5 ">
           <RadioButtonsId Cpath={"/works"} />
         </div>
-        <div className="hidden lg:block h-[1px] ml-[1.5rem] mr-[2.5rem] 2xl:ml-0 2xl:mr-0 mb-4 mt-10 bg-gray-200"></div>
-        <div className="breadcrumbs mt-4 md:mt-0 pl-[2.5rem] lg:pl-[1.5rem] 2xl:pl-0 2xl:ml-1">
-          <div className="w-full lg:w-1/4 ">
+        <div className="hidden lg:block h-[1px] ml-[1.5rem] mr-[2.5rem] 2xl:ml-0 2xl:mr-0 mb-4 mt-10 bg-gray-200"></div> */}
+        <div className="breadcrumbs flex py-[3rem] space-x-3 mt-4 md:mt-0 pl-[2.5rem] lg:pl-[1.5rem] 2xl:pl-0 2xl:ml-1">
+          <div className="w-fit mr-5">
             <Link
               href={`/libraries`}
-              className="flex items-center text-custom-mobile-orange"
+              className="flex text-xs lg:text-sm items-center text-custom-mobile-orange"
             >
               <IoIosArrowBack /> Back
             </Link>{" "}
+          </div>
+          <div className="w-fit">
+            <Link
+              href={`/libraries`}
+              className="hidden md:flex  text-xs lg:text-sm items-center text-custom-mobile-orange"
+            >
+              {libraryId}
+            </Link>
+          </div>
+          <div className="hidden md:flex items-center text-xs lg:text-sm text-custom-mobile-orange">
+            {" "}
+            {" > "}{" "}
+          </div>
+          <div className="w-fit">
+            <div className="hidden md:flex items-center text-xs lg:text-sm text-custom-mobile-orange">
+              {workData?.Titel}
+            </div>
           </div>
         </div>
 
@@ -101,25 +121,40 @@ const page = () => {
             />
           </div>
 
-          <div className="product-details w-full 2xl:w-1/2 flex flex-col justify-center">
+          <div className="product-details w-full mb-10 2xl:w-1/2 flex flex-col justify-center">
             <div className="flex flex-col gap-2">
               <h3 className="hidden lg:block text-custom-mobile-orange">
-                Work's data
+                Object data
               </h3>
-              <h1 className="pl-[3rem] lg:px-0 text-custom-brown font-medium text-[35px]">
+              <h1 className="pl-[3rem] lg:px-0 mb-8 text-custom-brown font-medium text-[35px]">
                 {workData?.Titel}
               </h1>
             </div>
-            <div className="condition hidden lg:flex w-[75%] justify-start gap-6 my-6">
-              {/* <div className="text-custom-gray">
+            <div className="flex pl-[3rem] lg:px-0 w-full lg:flex-row flex-col gap-6">
+              <div className="flex w-fit space-x-1">
+                <div className="font-light  text-sm"> Condition: </div>
+                <div className="text-sm"> {workData?.Zustand} </div>
+              </div>
+              <div className="flex w-fit space-x-1">
+                <div className="font-light text-sm text-custom-mobile-orange">
+                  Library:
+                </div>
+                <div className="text-sm text-custom-mobile-orange">
+                  {libraryId}
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="condition hidden lg:flex w-[75%] justify-start gap-6 my-6">
+              <div className="text-custom-gray">
                 Condition: <span className="text-custom-brown">api</span>
               </div>
-              <div className="text-custom-mobile-orange">Library: api</div> */}
+              <div className="text-custom-mobile-orange">Library: api</div>
               <div
                 style={{
                   overflow: "hidden",
-                  // textOverflow: "ellipsis",
-                  // whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
                   maxWidth: "100%",
                 }}
                 className="font-light text-custom-mobile-orange"
@@ -133,7 +168,8 @@ const page = () => {
                     </span>
                   )}
               </div>
-            </div>
+            </div> */}
+
             <div className="flex w-full lg:w-1/2 justify-center lg:justify-start gap-6 mt-8 items-center">
               <div className="w-3/4 lg:w-1/3">
                 <button className="rounded-full hover:bg-[#415479] lg:hover:bg-custom-mobile-orange hover:text-white w-full border border-[#415479] lg:border-custom-mobile-orange text-[#415479] lg:text-black p-1">
@@ -261,7 +297,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="libraries-list pl-0 lg:pl-5 2xl:pl-0 flex flex-col">
+        {/* <div className="libraries-list pl-0 lg:pl-5 2xl:pl-0 flex flex-col">
           <h1 className="my-8 text-custom-brown w-full px-[10px] md:pl-0 text-[20px] font-semibold self-start">
             Libraries containing this work
           </h1>
@@ -280,7 +316,7 @@ const page = () => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className="my-14 page-end">
           <div className="w-full lg:w-1/4">

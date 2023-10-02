@@ -10,6 +10,7 @@ import { Pagination } from "antd";
 import { FormControl, NativeSelect } from "@mui/material";
 import AllLibrariesWordCard from "@/components/AllLibrariesWordCard";
 import LibraryCardLibPage from "@/components/LibraryCardLibPage";
+import Link from "@/node_modules/next/link";
 
 const page = () => {
   const [librariesData, setLibrariesData] = useState<any>();
@@ -50,6 +51,8 @@ const page = () => {
 
     return formattedDate;
   }
+
+  console.log("->>", librariesData?.besitzes);
 
   return (
     <Layout>
@@ -107,16 +110,24 @@ const page = () => {
                 <div className="overflow-x-auto custom-scrollbar">
                   <div className="flex space-x-4 pb-10">
                     {library.besitzes?.map((work: any, index: any) => (
-                      <AllLibrariesWordCard
-                        isfooterText={true}
-                        imageUrl={work.stammwerke?.Titelbild.url}
-                        description={work.stammwerke?.Titel}
-                        footerText={work.stammwerke?.Stil}
-                        isHomePageCard={false}
-                        isType={false}
-                        titleText={work.stammwerke?.Titel}
-                        hasVolumes={false}
-                      />
+                      <Link
+                        href={{
+                          pathname: `libraries/work/${work.stammwerke?.id}`,
+                          query: { ...work.stammwerke, libraryId: library.username },
+                        }}
+                        className="h-fit"
+                      >
+                        <AllLibrariesWordCard
+                          isfooterText={true}
+                          imageUrl={work.stammwerke?.Titelbild.url}
+                          description={work.stammwerke?.Titel}
+                          footerText={work.stammwerke?.Stil}
+                          isHomePageCard={false}
+                          isType={false}
+                          titleText={work.stammwerke?.Titel}
+                          hasVolumes={false}
+                        />
+                      </Link>
                     ))}
                   </div>
                 </div>
