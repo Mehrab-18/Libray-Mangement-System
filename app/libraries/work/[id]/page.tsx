@@ -14,7 +14,7 @@ import LibraryCardLibPage from "@/components/LibraryCardLibPage";
 const page = () => {
   const [workData, setWorkData] = useState<any>(null);
   const [id, setId] = useState<string | null>();
-  const [libraryId, setLibraryId] = useState("");
+  const [libraryId, setLibraryId] = useState<string | null>("");
 
   useEffect(() => {
     const currentURL = window.location.href;
