@@ -27,3 +27,8 @@ export const getSingleWork = (id) =>
   getRequest(
     `https://strapi-philips.onrender.com/api/stammwerkes/${id}?populate=deep,3`
   );
+
+// export const getSinglelibraryWork = (id) =>
+//   getRequest(
+//     `https://strapi-philips.onrender.com/api/users/${id}?populate=deep,4`
+//   );

@@ -119,19 +119,19 @@ const page = () => {
           <div className="w-full lg:w-[55%] lg:mt-4">
             <div className="w-full flex justify-start flex-wrap">
               {libraryData?.besitzes.map((work: any, index: number) => (
-                <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/3" key={index}>
+                <div className="w-full " key={index}>
                   <Link href={`works/${work.id}`}>
                     <WorkCard
-                      imageUrl={work?.stammwerke.Titelbild.url}
+                      imageUrl={work?.stammwerke?.Titelbild.url}
                       isType={true}
-                      typeText={work?.stammwerke.Art}
-                      titleText={work?.stammwerke.Titel}
-                      footerText={`Astronomie:${work?.stammwerke.Jahr}`}
+                      typeText={work?.stammwerke?.Art}
+                      titleText={work?.stammwerke?.Titel}
+                      footerText={`Astronomie:${work?.stammwerke?.Jahr}`}
                       isfooterText={true}
                       isfooterText2={true}
                       footerText2={`Condition: sehr gut`}
                       hasVolumes={true}
-                      noOfVolumes={work?.stammwerke.AnzahlBuecher}
+                      noOfVolumes={work?.stammwerke?.AnzahlBuecher}
                       cardStyles={workCardStyles}
                     />
                   </Link>
