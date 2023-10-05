@@ -16,6 +16,10 @@ const AllWorkPageCard = ({
   footerText2,
   hasVolumes,
   noOfVolumes,
+  isfooterTextHeading,
+  isfooterTextHeading2,
+  footerTextHeading,
+  footerTextHeading2,
 }: any) => {
   return (
     <div className="min-w-[350px] bg-[#F4F4F4] lg:min-w-[350px] h-fit flex flex-col border shadow-xl rounded-md">
@@ -57,25 +61,46 @@ const AllWorkPageCard = ({
               </button>
             )}
             {hasVolumes && (
-              <div className="space-x-2">
-                <span className="text-custom-brown text-[15px]">Volumes:</span>
-                <span className="text-black text-[15px]">{noOfVolumes}</span>
+              <div className="space-x-1">
+                <span className="text-custom-brown font-light text-[13px]">Volumes:</span>
+                <span className="text-black font-medium text-[13px]">{noOfVolumes}</span>
               </div>
             )}
+          </div>  
+          <div className="text-[13px] h-[85px] w-[230px] pt-3 p-5 text-custom-brown font-semibold">
+            <div className="truncate">{titleText}</div>
           </div>
-          <div className={`text-[16px] h-[70px] w-[330px] pt-0 p-5 flex-wrap text-custom-brown font-semibold`}>
-            {titleText}
-          </div>
-          <div className="px-10">
+          <div className="px-5">
             <hr />
           </div>
-          <div className=" p-5 border-gray-300">
-            <div className="w-full flex justify-between">
-              <div className="w-[45%] pt-2 text-custom-brown text-[14px] justify-self-end	">
-                {isfooterText && <span>{footerText}</span>}
-              </div>
-              <div className="w-[45%] pt-2 text-custom-brown text-[12px] justify-self-end	">
-                {isfooterText2 && <span>{footerText2}</span>}
+          <div className=" px-4 py-4 border-gray-300">
+            <div className="w-full flex items-center justify-between">
+              {isfooterText && (
+                <div className="flex w-fit space-x-1">
+                  {isfooterTextHeading && (
+                    <div className="w-full text-custom-brown text-[12px]">
+                      {footerTextHeading}
+                    </div>
+                  )}
+                  <div className="w-full text-custom-brown font-semibold text-[12px]">
+                    {" "}
+                    {footerText}
+                  </div>
+                </div>
+              )}
+              <div className="flex-shrink-0 text-custom-brown text-[12px]">
+                {isfooterText2 && (
+                  <div className="flex w-fit space-x-1">
+                    {isfooterTextHeading2 && (
+                      <div className="w-full text-custom-brown text-[12px]">
+                        {footerTextHeading2}
+                      </div>
+                    )}
+                    <div className="w-full text-custom-brown font-semibold text-[12px]">
+                      {footerText2}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

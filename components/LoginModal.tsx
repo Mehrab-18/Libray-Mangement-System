@@ -12,6 +12,8 @@ import {
 } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
 
+import { useUserObj } from "@/app/UserContext";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { loginApi } from "@/api/works";
 import Link from "next/link";
@@ -79,6 +81,9 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
         handleModalCancel();
       }, 1000);
     } else {
+      const user = res.response.data.user;
+      const { setUserObj } = useUserObj();
+      setUserObj(user);
       api["success"]({
         message: "Successful",
         description: `You have successfully logged In`,

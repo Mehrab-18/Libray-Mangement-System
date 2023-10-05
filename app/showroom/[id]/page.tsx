@@ -151,7 +151,7 @@ const page = () => {
             </div>{" "}
           </div>
         </div>
-        <div className="hidden 2xl:pl-[9rem] h-[1px] w-[100%] my-10 bg-gray-200"></div>
+        <div className="hidden 2xl:pl-[6rem] h-[1px] w-[100%] my-10 bg-gray-200"></div>
 
         <div className="flex flex-col pt-[1rem] h-full lg:flex-row justify-start gap-12">
           <div className="w-full lg:w-1/4 pt-[3.5rem] h-full flex flex-col justify-between pl-2 2xl:pl-[6rem] lg:pb-12">
@@ -162,10 +162,10 @@ const page = () => {
                   id={libraryData?.id}
                   works={calculateLibraryWorks()}
                   dateofAddition={formatDateToDDYYYYMM(libraryData?.createdAt)}
-                  isRecommended={false}
+                  isRecommended={true}
                   isBtn1={true}
                   btn1Text={"Contact"}
-                  // conditionColor={selectConditionColor(libraryData?.Mitgliedschaft)}
+                  conditionColor={selectConditionColor(libraryData?.Mitgliedschaft)}
                   condition={libraryData?.Mitgliedschaft}
                 />
               </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { IoIosArrowBack } from "react-icons/io";
 import { LuUpload } from "react-icons/lu";
 import { useState } from "react";
+import BindingImage from "../public/images/libpic.png";
 const emailIcon = require("@/public/icons/Email_Icon@2x.png");
 const phoneIcon = require("@/public/icons/phone Icon@2x.png");
 const locationIcon = require("@/public/icons/Location_Icon@2x.png");
@@ -59,12 +60,12 @@ const BindingForm = () => {
           className="hidden lg:flex image-container"
           style={{ height: "1800px" }}
         >
-          {/* <Image
+          <Image
             src={BindingImage}
             alt="Form Image"
             width={640}
             height={1800}
-          /> */}
+          />
         </div>
         <div className="mx-4 w-full lg:w-1/2">
           <div className="mt-10 w-full lg:hidden ">

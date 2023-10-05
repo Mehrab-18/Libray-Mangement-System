@@ -51,14 +51,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   ];
 
   return (
-    <div className="">
+    <div className="min-h-screen">
       <NavBar />
-      <main>{children}</main>
-      <div className="hidden lg:flex py-8 px-8 w-full justify-between bg-custom-gray">
-        <div className="w-1/4 text-white text-[16px] font-semibold">
+      <main className="flex-grow min-h-screen" >{children}</main>
+      <div className="hidden bottom-0 lg:flex py-8 px-8 w-full justify-between bg-custom-gray">
+        <div className="w-fit text-white text-[13px] font-semibold">
           kollektiv archiv GmbH © 2023 All rights reserved
         </div>
-        <div className="w-1/2">
+        <div className="w-fit">
           <ul className="flex justify-center gap-12">
             {publicLinks.map((link, index) => (
               <li key={index}>
@@ -71,10 +71,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             ))}
           </ul>
         </div>
-        <div className="w-1/5">
+        <div className="w-fit">
           <ul className="flex justify-end gap-12">
             {footerLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="text-[13px]">
                 <CustomLink
                   url={link.url}
                   title={link.title}
@@ -87,8 +87,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>{" "}
       <div className="block lg:hidden bg-custom-offwhite">
         <div className="w-full bg-custom-mobile-orange p-2">
-          <div className="nav-links text-white font-semibold">
-            <ul className="flex justify-center gap-4">
+          <div className="nav-links text-white text-[13px] font-semibold">
+            <ul className="flex justify-center gap-4 ">
               <li>
                 <Link href="/#">About Us</Link>
               </li>
