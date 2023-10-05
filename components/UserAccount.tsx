@@ -127,7 +127,7 @@ function UserAccount() {
                   className="w-fit cursor-pointer"
                   onClick={handlePrintClick}
                 >
-                  <Image src={printImg} width={75} />
+                  <Image src={printImg} width={75} alt={'print'} />
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ function UserAccount() {
         <div className="flex flex-col lg:flex-row gap-2 w-full mt-5">
           <div className="shadow-xl flex flex-col lg:flex-row items-center justify-center w-full mb-10 lg:mb-0 lg:w-[690px] h-fit lg:h-[360px] gap-[5rem]">
             <div>
-              <Image src={CircleGraph} />
+              <Image src={CircleGraph}  alt={'Chart'}/>
             </div>
             <div className="w-[250px]">
               <h1 className="text-lg font-bold mb-4">
@@ -235,7 +235,7 @@ function UserAccount() {
           </div>
           <div className="shadow-xl flex flex-col lg:flex-row items-center  justify-center w-full lg:w-[690px] h-fit lg:h-[360px] gap-[2rem]">
             <div>
-              <Image src={BarGraph} />
+              <Image src={BarGraph} alt={'Chart'}/>
             </div>
             <div className="w-[250px]">
               <h1 className="text-lg font-bold mb-4 ">

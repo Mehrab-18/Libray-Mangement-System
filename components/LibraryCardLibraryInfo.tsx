@@ -32,7 +32,7 @@ const LibraryCardLibPage = ({
           <h3 className="font-light">Das Buchregister</h3>
           <h5 className="font-light">Bibliotheksnummer</h5>
         </div> */}
-        <Image src={cardImage} width={190} />
+        <Image src={cardImage} width={190} alt={'image'}/>
       </div>
 
       <div className="w-full mb-5 shadow-lg">
@@ -95,7 +95,7 @@ const LibraryCardLibPage = ({
         </div>
       )}
       <div className="w-fit pt-10 cursor-pointer" onClick={handlePrintClick}>
-        <Image src={printImg} width={75} />
+        <Image src={printImg} width={75} alt={'print'}/>
       </div>
     </div>
   );
