@@ -73,7 +73,7 @@ function MobileNavBar() {
     <header className="bg-white w-full z-10 shadow-md">
       <nav className="w-full bg-transparent py-4 flex justify-end items-center">
         <div className="w-full lg:w-full flex lg:justify-between items-center">
-          <div className="w-full h-full lg:pl-0 pl-[2.5rem]">
+          <div className="w-full lg:w-fit h-full lg:pl-[2rem] pl-[2.5rem]">
             <Link href="/" className="flex justify-center items-center">
               <Image
                 src={desklogo}
@@ -84,7 +84,7 @@ function MobileNavBar() {
               />
             </Link>
           </div>
-          <div className="hidden lg:block w-[40%]">
+          <div className="hidden lg:block w-fit">
             <ul className="flex justify-center space-x-6">
               {publicLinks.map((link: any, index: number) => (
                 <li key={index}>
@@ -103,7 +103,7 @@ function MobileNavBar() {
               ))}
             </ul>
           </div>
-          <div className="hidden w-[35%] lg:flex justify-center items-center gap-4">
+          <div className="hidden w-fit lg:flex justify-center items-center gap-4 lg:pr-10">
             <div className="flex justify-between items-center gap-2">
               <Image src={worldIcon} alt="world-icon" />
               <h1 className="font-semibold">DE</h1>

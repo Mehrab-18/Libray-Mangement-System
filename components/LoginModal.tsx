@@ -71,6 +71,9 @@ const LoginModal = ({ modal, setModal }: LoginModal) => {
   const login = async () => {
     setLoader(true);
     const res = await loginApi(loginPayload);
+    const redirectLink = document.createElement("a");
+    redirectLink.href = "/my_library";
+    redirectLink.click();
     if (res?.response?.data?.error) {
       api["error"]({
         message: "Failed",
