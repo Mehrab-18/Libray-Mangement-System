@@ -36,17 +36,17 @@ const Hero = () => {
           <CustomLink
             title="All Works"
             url="/works"
-            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
+            customStyles="flex w-fit px-[2rem] lg:px-5 h-[40px] lg:h-[55px] shadow-xl items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-[10px] lg:text-base rounded-full"
           />
           <CustomLink
             title="All libraries"
             url="/libraries"
-            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
+            customStyles="flex w-fit px-[2rem] lg:px-5 h-[40px] lg:h-[55px] shadow-xl items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-[10px] lg:text-base rounded-full"
           />
           <CustomLink
             title="Showrooms"
             url="/showroom"
-            customStyles="flex w-fit px-3 lg:px-5 h-[55px] items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-base rounded-full"
+            customStyles="flex w-fit px-[2rem] lg:px-5 h-[40px] lg:h-[55px] shadow-xl items-center justify-center hover:no-underline hover:bg-custom-alert-orange bg-custom-mobile-orange text-white text-[10px] lg:text-base rounded-full"
           />
         </div>
       </div>

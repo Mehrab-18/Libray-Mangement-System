@@ -406,6 +406,8 @@ const page = () => {
                       typeText={work.attributes.Art}
                       titleText={work.attributes.Titel}
                       footerText={work.attributes.Stil}
+                      isfooterTextHeading2={false}
+                      isfooterTextHeading={false}
                       isfooterText={true}
                       hasVolumes={true}
                       noOfVolumes={work.attributes.AnzahlBuecher}

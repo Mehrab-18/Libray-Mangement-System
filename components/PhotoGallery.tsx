@@ -58,7 +58,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
           >
             <input {...getInputProps()} />
 
-            <Image src={ImageUpload} alt={"Image"}/>
+            <Image src={ImageUpload} alt={"Image"} />
           </div>
         </div>
 

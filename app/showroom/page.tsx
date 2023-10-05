@@ -123,6 +123,7 @@ const page = () => {
                   isRecommended={true}
                   isBtn1={true}
                   btn1Text={"Go to library"}
+                  isShowroom={true}
                 />
               </div>
               <div className="w-full  2xl:max-w-screen-lg overflow-x-auto">

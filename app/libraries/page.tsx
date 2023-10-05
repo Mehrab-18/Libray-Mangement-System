@@ -104,6 +104,7 @@ const page = () => {
                   isRecommended={false}
                   isBtn1={true}
                   btn1Text={"Go to library"}
+                  isShowroom={false}
                 />
               </div>
               <div className="w-full  2xl:max-w-screen-lg overflow-x-auto">
